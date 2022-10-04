@@ -12,23 +12,6 @@
 		8E5BF4C328E9C77E00802AE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5BF4C228E9C77E00802AE9 /* ViewController.swift */; };
 		8E5BF4C828E9C77E00802AE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF4C728E9C77E00802AE9 /* Assets.xcassets */; };
 		8E5BF4CB28E9C77E00802AE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF4C928E9C77E00802AE9 /* LaunchScreen.storyboard */; };
-		8E5BF4D928EB399600802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF4D828EB399600802AE9 /* .gitkeep */; };
-		8E5BF4EE28EB40D100802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF4ED28EB40D100802AE9 /* .gitkeep */; };
-		8E5BF4F028EB40E000802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF4EF28EB40E000802AE9 /* .gitkeep */; };
-		8E5BF4F228EB40F200802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF4F128EB40F200802AE9 /* .gitkeep */; };
-		8E5BF4F428EB40FF00802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF4F328EB40FF00802AE9 /* .gitkeep */; };
-		8E5BF4F628EB410900802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF4F528EB410900802AE9 /* .gitkeep */; };
-		8E5BF4FA28EB412100802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF4F928EB412100802AE9 /* .gitkeep */; };
-		8E5BF4FC28EB413300802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF4FB28EB413300802AE9 /* .gitkeep */; };
-		8E5BF4FE28EB414000802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF4FD28EB414000802AE9 /* .gitkeep */; };
-		8E5BF50028EB414D00802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF4FF28EB414C00802AE9 /* .gitkeep */; };
-		8E5BF50228EB415600802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF50128EB415600802AE9 /* .gitkeep */; };
-		8E5BF50428EB416000802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF50328EB416000802AE9 /* .gitkeep */; };
-		8E5BF50628EB416A00802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF50528EB416A00802AE9 /* .gitkeep */; };
-		8E5BF50828EB417300802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF50728EB417300802AE9 /* .gitkeep */; };
-		8E5BF50E28EB428700802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF50D28EB428700802AE9 /* .gitkeep */; };
-		8E5BF51028EB429200802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF50F28EB429200802AE9 /* .gitkeep */; };
-		8E5BF51228EB429F00802AE9 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8E5BF51128EB429F00802AE9 /* .gitkeep */; };
 		8E5BF51528EC54AC00802AE9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8E5BF51428EC54AC00802AE9 /* SnapKit */; };
 		8E5BF51828EC54BC00802AE9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8E5BF51728EC54BC00802AE9 /* Then */; };
 		8E5BF51C28EC6FDE00802AE9 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8E5BF51B28EC6FDE00802AE9 /* CombineMoya */; };
@@ -424,25 +407,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E5BF4D928EB399600802AE9 /* .gitkeep in Resources */,
 				8E5BF4CB28E9C77E00802AE9 /* LaunchScreen.storyboard in Resources */,
-				8E5BF4FC28EB413300802AE9 /* .gitkeep in Resources */,
-				8E5BF51028EB429200802AE9 /* .gitkeep in Resources */,
-				8E5BF51228EB429F00802AE9 /* .gitkeep in Resources */,
-				8E5BF4FE28EB414000802AE9 /* .gitkeep in Resources */,
-				8E5BF4F028EB40E000802AE9 /* .gitkeep in Resources */,
-				8E5BF4F228EB40F200802AE9 /* .gitkeep in Resources */,
 				8E5BF4C828E9C77E00802AE9 /* Assets.xcassets in Resources */,
-				8E5BF50028EB414D00802AE9 /* .gitkeep in Resources */,
-				8E5BF4EE28EB40D100802AE9 /* .gitkeep in Resources */,
-				8E5BF4FA28EB412100802AE9 /* .gitkeep in Resources */,
-				8E5BF50828EB417300802AE9 /* .gitkeep in Resources */,
-				8E5BF50E28EB428700802AE9 /* .gitkeep in Resources */,
-				8E5BF4F428EB40FF00802AE9 /* .gitkeep in Resources */,
-				8E5BF50428EB416000802AE9 /* .gitkeep in Resources */,
-				8E5BF4F628EB410900802AE9 /* .gitkeep in Resources */,
-				8E5BF50228EB415600802AE9 /* .gitkeep in Resources */,
-				8E5BF50628EB416A00802AE9 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
