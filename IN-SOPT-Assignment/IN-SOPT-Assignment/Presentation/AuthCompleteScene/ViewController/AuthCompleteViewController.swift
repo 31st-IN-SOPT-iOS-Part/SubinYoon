@@ -58,6 +58,9 @@ final class AuthCompleteViewController: UIViewController {
     }
     
     @objc private func completeButtonDidTap() {
-        // 카톡 친구탭바 뷰로 전환
+        let viewModel = FriendsViewModel(userModel: viewModel.userModel)
+        let friendsViewController = FriendsViewController()
+        friendsViewController.viewModel = viewModel
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootVC(friendsViewController, animated: false)
     }
 }
