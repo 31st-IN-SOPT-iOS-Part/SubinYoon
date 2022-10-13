@@ -48,7 +48,6 @@ final class SignInViewController: UIViewController {
     
     private lazy var signInButton = UIButton(type: .system).then {
         $0.setAttributedTitle(NSAttributedString(string: "카카오계정 로그인", attributes: [.font: UIFont.systemFont(ofSize: 15, weight: .medium), .foregroundColor: UIColor.black]), for: .normal)
-        $0.setTitleColor(.black, for: .normal)
         $0.backgroundColor = .buttonGray
         $0.isEnabled = false
         $0.layer.cornerRadius = 10
