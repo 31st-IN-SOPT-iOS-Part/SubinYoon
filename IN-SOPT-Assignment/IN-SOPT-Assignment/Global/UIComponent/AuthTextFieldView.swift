@@ -15,7 +15,7 @@ final class AuthTextFieldView: UIView {
     
     // MARK: - UI
     private let textField = UITextField().then {
-        $0.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        $0.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         $0.clearButtonMode = .whileEditing
     }
     
