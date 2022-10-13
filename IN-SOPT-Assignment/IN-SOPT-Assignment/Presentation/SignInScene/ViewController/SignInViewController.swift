@@ -137,7 +137,8 @@ final class SignInViewController: UIViewController {
     }
     
     @objc private func signUpButtonDidTap() {
-        // 회원가입 뷰로 전환
+        let signUpViewController = SignUpViewController()
+        self.navigationController?.pushViewController(signUpViewController, animated: true)
     }
 }
 
