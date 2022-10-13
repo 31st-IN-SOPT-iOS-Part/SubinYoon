@@ -26,6 +26,9 @@
 		8EF111E628F800D100A1D665 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111E528F800D100A1D665 /* SignInViewModel.swift */; };
 		8EF111E928F8017400A1D665 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111E828F8017400A1D665 /* ViewModelType.swift */; };
 		8EF111EC28F8043600A1D665 /* AuthTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111EB28F8043600A1D665 /* AuthTextFieldView.swift */; };
+		8EF1120128F8528F00A1D665 /* AuthCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1120028F8528F00A1D665 /* AuthCompleteViewController.swift */; };
+		8EF1120328F852B300A1D665 /* AuthCompleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1120228F852B300A1D665 /* AuthCompleteViewModel.swift */; };
+		8EF1120528F853FD00A1D665 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1120428F853FD00A1D665 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,14 +44,11 @@
 		8E5BF4F928EB412100802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF4FB28EB413300802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF4FD28EB414000802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		8E5BF4FF28EB414C00802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF50128EB415600802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF50328EB416000802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF50528EB416A00802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF50728EB417300802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF50D28EB428700802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		8E5BF50F28EB429200802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		8E5BF51128EB429F00802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8EF111D428F7FBF000A1D665 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		8EF111D628F7FC0000A1D665 /* ColorLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLiterals.swift; sourceTree = "<group>"; };
 		8EF111DA28F7FECD00A1D665 /* addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSubviews.swift; sourceTree = "<group>"; };
@@ -59,6 +59,9 @@
 		8EF111E528F800D100A1D665 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		8EF111E828F8017400A1D665 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		8EF111EB28F8043600A1D665 /* AuthTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextFieldView.swift; sourceTree = "<group>"; };
+		8EF1120028F8528F00A1D665 /* AuthCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCompleteViewController.swift; sourceTree = "<group>"; };
+		8EF1120228F852B300A1D665 /* AuthCompleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCompleteViewModel.swift; sourceTree = "<group>"; };
+		8EF1120428F853FD00A1D665 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,7 +252,7 @@
 		8E5BF4E328EB3FDE00802AE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8E5BF4FF28EB414C00802AE9 /* .gitkeep */,
+				8EF1120428F853FD00A1D665 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -339,7 +342,7 @@
 		8E5BF50A28EB426C00802AE9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				8E5BF51128EB429F00802AE9 /* .gitkeep */,
+				8EF1120028F8528F00A1D665 /* AuthCompleteViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -347,7 +350,7 @@
 		8E5BF50B28EB427500802AE9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				8E5BF50F28EB429200802AE9 /* .gitkeep */,
+				8EF1120228F852B300A1D665 /* AuthCompleteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -465,11 +468,14 @@
 				8EF111D528F7FBF000A1D665 /* ImageLiterals.swift in Sources */,
 				8E5BF4BF28E9C77E00802AE9 /* AppDelegate.swift in Sources */,
 				8EF111D728F7FC0000A1D665 /* ColorLiterals.swift in Sources */,
+				8EF1120128F8528F00A1D665 /* AuthCompleteViewController.swift in Sources */,
 				8E5BF4C128E9C77E00802AE9 /* SceneDelegate.swift in Sources */,
+				8EF1120528F853FD00A1D665 /* UserModel.swift in Sources */,
 				8EF111E928F8017400A1D665 /* ViewModelType.swift in Sources */,
 				8EF111E628F800D100A1D665 /* SignInViewModel.swift in Sources */,
 				8EF111DD28F7FF0400A1D665 /* getClassName.swift in Sources */,
 				8EF111E128F7FFEF00A1D665 /* Adjusted+.swift in Sources */,
+				8EF1120328F852B300A1D665 /* AuthCompleteViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
