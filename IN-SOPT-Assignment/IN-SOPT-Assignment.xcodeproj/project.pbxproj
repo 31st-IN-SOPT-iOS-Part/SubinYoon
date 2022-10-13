@@ -25,6 +25,7 @@
 		8EF111E328F8000100A1D665 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111E228F8000100A1D665 /* UITextField+.swift */; };
 		8EF111E628F800D100A1D665 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111E528F800D100A1D665 /* SignInViewModel.swift */; };
 		8EF111E928F8017400A1D665 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111E828F8017400A1D665 /* ViewModelType.swift */; };
+		8EF111EC28F8043600A1D665 /* AuthTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111EB28F8043600A1D665 /* AuthTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		8EF111E228F8000100A1D665 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		8EF111E528F800D100A1D665 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		8EF111E828F8017400A1D665 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		8EF111EB28F8043600A1D665 /* AuthTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				8E5BF4DC28EB3E7A00802AE9 /* Extensions */,
 				8E5BF4DB28EB3E7300802AE9 /* Literals */,
 				8E5BF4DA28EB39BE00802AE9 /* Resources */,
+				8EF111EA28F803CD00A1D665 /* UIComponent */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -365,6 +368,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		8EF111EA28F803CD00A1D665 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				8EF111EB28F8043600A1D665 /* AuthTextFieldView.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -447,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E5BF4C328E9C77E00802AE9 /* SignInViewController.swift in Sources */,
+				8EF111EC28F8043600A1D665 /* AuthTextFieldView.swift in Sources */,
 				8EF111E328F8000100A1D665 /* UITextField+.swift in Sources */,
 				8EF111DB28F7FECD00A1D665 /* addSubviews.swift in Sources */,
 				8EF111DF28F7FFB800A1D665 /* UIViewController+.swift in Sources */,
