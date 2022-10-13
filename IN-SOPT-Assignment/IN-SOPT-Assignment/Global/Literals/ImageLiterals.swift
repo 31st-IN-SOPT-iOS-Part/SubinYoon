@@ -16,6 +16,7 @@ enum ImageLiterals {
     static var storyIcn: UIImage { .load(named: "profileStoryImg") }
     static var talkIcn: UIImage { .load(named: "profileTalkImg") }
 }
+
 extension UIImage {
     static func load(named imageName: String) -> UIImage {
         guard let image = UIImage(named: imageName, in: nil, compatibleWith: nil) else {
