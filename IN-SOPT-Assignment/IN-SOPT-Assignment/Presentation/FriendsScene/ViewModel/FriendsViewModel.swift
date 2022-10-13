@@ -1,5 +1,5 @@
 //
-//  FriendViewModel.swift
+//  FriendsViewModel.swift
 //  IN-SOPT-Assignment
 //
 //  Created by devxsby on 2022/10/14.
@@ -7,7 +7,7 @@
 
 import Combine
 
-final class FriendViewModel: ViewModelType {
+final class FriendsViewModel: ViewModelType {
     var userModel: UserModel
 
     init(userModel: UserModel) {
@@ -25,7 +25,7 @@ final class FriendViewModel: ViewModelType {
     }
 }
 
-extension FriendViewModel {
+extension FriendsViewModel {
     func transform(from input: Input) -> Output {
         let output = Output()
         return output

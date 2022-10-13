@@ -11,7 +11,7 @@ import Combine
 final class FriendsViewController: UIViewController {
     
     // MARK: - Properties
-    var viewModel: FriendViewModel!
+    var viewModel: FriendsViewModel!
     private var cancellable: Set<AnyCancellable> = []
 
     // MARK: - UI

@@ -31,7 +31,7 @@ final class AuthCompleteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        setWelcomeLabel()
+        bind()
     }
     
     // MARK: - Functions
@@ -53,7 +53,7 @@ final class AuthCompleteViewController: UIViewController {
         }
     }
     
-    private func setWelcomeLabel() {
+    private func bind() {
         welcomeLabel.text = viewModel.getUserEmail()
     }
     

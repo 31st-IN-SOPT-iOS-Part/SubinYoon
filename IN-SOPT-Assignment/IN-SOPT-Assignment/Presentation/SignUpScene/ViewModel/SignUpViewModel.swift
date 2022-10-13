@@ -21,6 +21,7 @@ final class SignUpViewModel: ViewModelType {
         var isSignUpValid = PassthroughSubject<Bool, Never>()
     }
 }
+
 extension SignUpViewModel {
     func transform(from input: Input) -> Output {
         let output = Output()
