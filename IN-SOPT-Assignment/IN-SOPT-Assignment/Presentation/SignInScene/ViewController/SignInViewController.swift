@@ -72,15 +72,16 @@ final class SignInViewController: UIViewController {
     }
     
     // MARK: - View Life Cycle
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = SignInViewModel()
         configureUI()
         bind()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     // MARK: - Functions
