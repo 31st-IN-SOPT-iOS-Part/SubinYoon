@@ -133,6 +133,7 @@ final class SignInViewController: UIViewController {
         let userModel = UserModel(email: emailTextFieldView.text, password: passwordTextFieldView.text)
         let authCompleteViewModel = AuthCompleteViewModel(userModel: userModel)
         let authCompleteViewController = AuthCompleteViewController()
+        
         authCompleteViewController.viewModel = authCompleteViewModel
         authCompleteViewController.modalPresentationStyle = .fullScreen
         present(authCompleteViewController, animated: true, completion: nil)
