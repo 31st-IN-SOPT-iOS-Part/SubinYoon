@@ -18,6 +18,10 @@
 		8E5BF51E28EC6FDE00802AE9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8E5BF51D28EC6FDE00802AE9 /* Moya */; };
 		8E774D3028F85D9F0094E45E /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774D2F28F85D9F0094E45E /* SignUpViewModel.swift */; };
 		8E774D3228F85DAF0094E45E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774D3128F85DAF0094E45E /* SignUpViewController.swift */; };
+		8E774D4128F86B750094E45E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774D4028F86B750094E45E /* ProfileViewController.swift */; };
+		8E774D4328F86BA10094E45E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774D4228F86BA10094E45E /* ProfileViewModel.swift */; };
+		8E774D4528F86BDD0094E45E /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774D4428F86BDD0094E45E /* FriendsViewController.swift */; };
+		8E774D4728F86BE70094E45E /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774D4628F86BE70094E45E /* FriendsViewModel.swift */; };
 		8EF111D528F7FBF000A1D665 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111D428F7FBF000A1D665 /* ImageLiterals.swift */; };
 		8EF111D728F7FC0000A1D665 /* ColorLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111D628F7FC0000A1D665 /* ColorLiterals.swift */; };
 		8EF111DB28F7FECD00A1D665 /* addSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111DA28F7FECD00A1D665 /* addSubviews.swift */; };
@@ -51,6 +55,12 @@
 		8E5BF50D28EB428700802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E774D2F28F85D9F0094E45E /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		8E774D3128F85DAF0094E45E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8E774D3C28F86B420094E45E /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8E774D3E28F86B4C0094E45E /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8E774D4028F86B750094E45E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8E774D4228F86BA10094E45E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		8E774D4428F86BDD0094E45E /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		8E774D4628F86BE70094E45E /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
 		8EF111D428F7FBF000A1D665 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		8EF111D628F7FC0000A1D665 /* ColorLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLiterals.swift; sourceTree = "<group>"; };
 		8EF111DA28F7FECD00A1D665 /* addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSubviews.swift; sourceTree = "<group>"; };
@@ -138,6 +148,8 @@
 				8E5BF4E128EB3FA500802AE9 /* SignInScene */,
 				8E5BF4E028EB3F8900802AE9 /* SignUpScene */,
 				8E5BF50928EB424800802AE9 /* AuthCompleteScene */,
+				8E774D3328F86A9F0094E45E /* FriendsScene */,
+				8E774D3428F86ABD0094E45E /* ProfileScene */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -365,6 +377,74 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		8E774D3328F86A9F0094E45E /* FriendsScene */ = {
+			isa = PBXGroup;
+			children = (
+				8E774D3828F86B1F0094E45E /* Views */,
+				8E774D3728F86B180094E45E /* ViewModel */,
+				8E774D3628F86B0E0094E45E /* ViewController */,
+			);
+			path = FriendsScene;
+			sourceTree = "<group>";
+		};
+		8E774D3428F86ABD0094E45E /* ProfileScene */ = {
+			isa = PBXGroup;
+			children = (
+				8E774D3B28F86B320094E45E /* Views */,
+				8E774D3A28F86B2D0094E45E /* ViewModel */,
+				8E774D3928F86B230094E45E /* ViewController */,
+			);
+			path = ProfileScene;
+			sourceTree = "<group>";
+		};
+		8E774D3628F86B0E0094E45E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8E774D4428F86BDD0094E45E /* FriendsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8E774D3728F86B180094E45E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8E774D4628F86BE70094E45E /* FriendsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8E774D3828F86B1F0094E45E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E774D3E28F86B4C0094E45E /* .gitkeep */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8E774D3928F86B230094E45E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8E774D4028F86B750094E45E /* ProfileViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8E774D3A28F86B2D0094E45E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8E774D4228F86BA10094E45E /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8E774D3B28F86B320094E45E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E774D3C28F86B420094E45E /* .gitkeep */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8EF111E728F8016E00A1D665 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,19 +546,23 @@
 				8E774D3028F85D9F0094E45E /* SignUpViewModel.swift in Sources */,
 				8EF111EC28F8043600A1D665 /* AuthTextFieldView.swift in Sources */,
 				8EF111E328F8000100A1D665 /* UITextField+.swift in Sources */,
+				8E774D4528F86BDD0094E45E /* FriendsViewController.swift in Sources */,
 				8EF111DB28F7FECD00A1D665 /* addSubviews.swift in Sources */,
 				8EF111DF28F7FFB800A1D665 /* UIViewController+.swift in Sources */,
 				8E774D3228F85DAF0094E45E /* SignUpViewController.swift in Sources */,
 				8EF111D528F7FBF000A1D665 /* ImageLiterals.swift in Sources */,
 				8E5BF4BF28E9C77E00802AE9 /* AppDelegate.swift in Sources */,
+				8E774D4128F86B750094E45E /* ProfileViewController.swift in Sources */,
 				8EF111D728F7FC0000A1D665 /* ColorLiterals.swift in Sources */,
 				8EF1120128F8528F00A1D665 /* AuthCompleteViewController.swift in Sources */,
 				8E5BF4C128E9C77E00802AE9 /* SceneDelegate.swift in Sources */,
 				8EF1120528F853FD00A1D665 /* UserModel.swift in Sources */,
+				8E774D4328F86BA10094E45E /* ProfileViewModel.swift in Sources */,
 				8EF111E928F8017400A1D665 /* ViewModelType.swift in Sources */,
 				8EF111E628F800D100A1D665 /* SignInViewModel.swift in Sources */,
 				8EF111DD28F7FF0400A1D665 /* getClassName.swift in Sources */,
 				8EF111E128F7FFEF00A1D665 /* Adjusted+.swift in Sources */,
+				8E774D4728F86BE70094E45E /* FriendsViewModel.swift in Sources */,
 				8EF1120328F852B300A1D665 /* AuthCompleteViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
