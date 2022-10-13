@@ -128,7 +128,12 @@ final class SignInViewController: UIViewController {
     }
     
     @objc private func signInButtonDidTap() {
-        // 환영 뷰로 전환
+        let userModel = UserModel(email: emailTextFieldView.text, password: passwordTextFieldView.text)
+        let authCompleteViewModel = AuthCompleteViewModel(userModel: userModel)
+        let authCompleteViewController = AuthCompleteViewController()
+        authCompleteViewController.viewModel = authCompleteViewModel
+        authCompleteViewController.modalPresentationStyle = .fullScreen
+        present(authCompleteViewController, animated: true, completion: nil)
     }
     
     @objc private func signUpButtonDidTap() {
