@@ -8,15 +8,15 @@
 import UIKit
 
 extension UIColor {
-    static var kakaoYellow: UIColor {
+    static var buttonYellow: UIColor {
         return UIColor(hex: "#FBE54C")
     }
     
-    static var kakaoGray: UIColor {
+    static var buttonGray: UIColor {
         return UIColor(hex: "#F6F6F6")
     }
     
-    static var kakaoBackground: UIColor {
+    static var friendTabBackground: UIColor {
         return UIColor(hex: "#879198")
     }
     
@@ -30,6 +30,14 @@ extension UIColor {
     
     static var textDarkGray: UIColor {
         return UIColor(hex: "#313030")
+    }
+    
+    static var lineDarkGray: UIColor {
+        return UIColor(hex: "#9F9E9F")
+    }
+    
+    static var lineLightGray: UIColor {
+        return UIColor(hex: "#FA7AD")
     }
 }
 
