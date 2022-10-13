@@ -16,6 +16,8 @@
 		8E5BF51828EC54BC00802AE9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8E5BF51728EC54BC00802AE9 /* Then */; };
 		8E5BF51C28EC6FDE00802AE9 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8E5BF51B28EC6FDE00802AE9 /* CombineMoya */; };
 		8E5BF51E28EC6FDE00802AE9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8E5BF51D28EC6FDE00802AE9 /* Moya */; };
+		8EF111D528F7FBF000A1D665 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111D428F7FBF000A1D665 /* ImageLiterals.swift */; };
+		8EF111D728F7FC0000A1D665 /* ColorLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111D628F7FC0000A1D665 /* ColorLiterals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +30,6 @@
 		8E5BF4CC28E9C77E00802AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E5BF4D828EB399600802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF4ED28EB40D100802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		8E5BF4EF28EB40E000802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF4F128EB40F200802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF4F328EB40FF00802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF4F528EB410900802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -43,6 +44,8 @@
 		8E5BF50D28EB428700802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF50F28EB429200802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF51128EB429F00802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8EF111D428F7FBF000A1D665 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
+		8EF111D628F7FC0000A1D665 /* ColorLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLiterals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +160,8 @@
 		8E5BF4DB28EB3E7300802AE9 /* Literals */ = {
 			isa = PBXGroup;
 			children = (
-				8E5BF4EF28EB40E000802AE9 /* .gitkeep */,
+				8EF111D428F7FBF000A1D665 /* ImageLiterals.swift */,
+				8EF111D628F7FC0000A1D665 /* ColorLiterals.swift */,
 			);
 			path = Literals;
 			sourceTree = "<group>";
@@ -420,7 +424,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E5BF4C328E9C77E00802AE9 /* ViewController.swift in Sources */,
+				8EF111D528F7FBF000A1D665 /* ImageLiterals.swift in Sources */,
 				8E5BF4BF28E9C77E00802AE9 /* AppDelegate.swift in Sources */,
+				8EF111D728F7FC0000A1D665 /* ColorLiterals.swift in Sources */,
 				8E5BF4C128E9C77E00802AE9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
