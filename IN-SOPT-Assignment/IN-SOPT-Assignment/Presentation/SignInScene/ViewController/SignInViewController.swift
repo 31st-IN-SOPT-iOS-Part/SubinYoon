@@ -72,6 +72,10 @@ final class SignInViewController: UIViewController {
     }
     
     // MARK: - View Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = SignInViewModel()
@@ -117,7 +121,6 @@ final class SignInViewController: UIViewController {
     
     private func bind() {
         let input = SignInViewModel.Input(emailText: emailTextFieldView.$text, passwordText: passwordTextFieldView.$text)
-        
         let output = viewModel.transform(from: input)
         
         output.isSignInValid.sink { [weak self] isValid in
