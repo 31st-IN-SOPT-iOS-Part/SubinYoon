@@ -18,6 +18,11 @@
 		8E5BF51E28EC6FDE00802AE9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8E5BF51D28EC6FDE00802AE9 /* Moya */; };
 		8EF111D528F7FBF000A1D665 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111D428F7FBF000A1D665 /* ImageLiterals.swift */; };
 		8EF111D728F7FC0000A1D665 /* ColorLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111D628F7FC0000A1D665 /* ColorLiterals.swift */; };
+		8EF111DB28F7FECD00A1D665 /* addSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111DA28F7FECD00A1D665 /* addSubviews.swift */; };
+		8EF111DD28F7FF0400A1D665 /* getClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111DC28F7FF0400A1D665 /* getClassName.swift */; };
+		8EF111DF28F7FFB800A1D665 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111DE28F7FFB800A1D665 /* UIViewController+.swift */; };
+		8EF111E128F7FFEF00A1D665 /* Adjusted+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111E028F7FFEF00A1D665 /* Adjusted+.swift */; };
+		8EF111E328F8000100A1D665 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111E228F8000100A1D665 /* UITextField+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +33,6 @@
 		8E5BF4C728E9C77E00802AE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E5BF4CA28E9C77E00802AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E5BF4CC28E9C77E00802AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E5BF4D828EB399600802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		8E5BF4ED28EB40D100802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF4F128EB40F200802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF4F328EB40FF00802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF4F528EB410900802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -46,6 +49,11 @@
 		8E5BF51128EB429F00802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8EF111D428F7FBF000A1D665 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		8EF111D628F7FC0000A1D665 /* ColorLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLiterals.swift; sourceTree = "<group>"; };
+		8EF111DA28F7FECD00A1D665 /* addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSubviews.swift; sourceTree = "<group>"; };
+		8EF111DC28F7FF0400A1D665 /* getClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getClassName.swift; sourceTree = "<group>"; };
+		8EF111DE28F7FFB800A1D665 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		8EF111E028F7FFEF00A1D665 /* Adjusted+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+.swift"; sourceTree = "<group>"; };
+		8EF111E228F8000100A1D665 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +152,8 @@
 		8E5BF4D728EB391D00802AE9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				8E5BF4D828EB399600802AE9 /* .gitkeep */,
+				8EF111DA28F7FECD00A1D665 /* addSubviews.swift */,
+				8EF111DC28F7FF0400A1D665 /* getClassName.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -169,7 +178,9 @@
 		8E5BF4DC28EB3E7A00802AE9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8E5BF4ED28EB40D100802AE9 /* .gitkeep */,
+				8EF111E028F7FFEF00A1D665 /* Adjusted+.swift */,
+				8EF111DE28F7FFB800A1D665 /* UIViewController+.swift */,
+				8EF111E228F8000100A1D665 /* UITextField+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -424,10 +435,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E5BF4C328E9C77E00802AE9 /* ViewController.swift in Sources */,
+				8EF111E328F8000100A1D665 /* UITextField+.swift in Sources */,
+				8EF111DB28F7FECD00A1D665 /* addSubviews.swift in Sources */,
+				8EF111DF28F7FFB800A1D665 /* UIViewController+.swift in Sources */,
 				8EF111D528F7FBF000A1D665 /* ImageLiterals.swift in Sources */,
 				8E5BF4BF28E9C77E00802AE9 /* AppDelegate.swift in Sources */,
 				8EF111D728F7FC0000A1D665 /* ColorLiterals.swift in Sources */,
 				8E5BF4C128E9C77E00802AE9 /* SceneDelegate.swift in Sources */,
+				8EF111DD28F7FF0400A1D665 /* getClassName.swift in Sources */,
+				8EF111E128F7FFEF00A1D665 /* Adjusted+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
