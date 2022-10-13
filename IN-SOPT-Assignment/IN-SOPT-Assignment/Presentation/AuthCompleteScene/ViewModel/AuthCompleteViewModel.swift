@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct AuthCompleteViewModel {
+    var userModel: UserModel
+    
+    init(userModel: UserModel) {
+        self.userModel = userModel
+    }
+    
+    func getUserEmail() -> String {
+        return "\(userModel.email)님\n환영합니다"
+    }
+}
