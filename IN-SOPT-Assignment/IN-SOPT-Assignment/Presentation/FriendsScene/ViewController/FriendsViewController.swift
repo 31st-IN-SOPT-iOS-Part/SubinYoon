@@ -41,6 +41,7 @@ final class FriendsViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         bind()
+        setTapGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,14 +75,25 @@ final class FriendsViewController: UIViewController {
         }
     }
     
-    private func bind() {
-        userNameLabel.text = viewModel.getUserName()
-    }
-    
     private func navigationBarUI() {
         self.navigationItem.setLeftBarButton(UIBarButtonItem(customView: naviFriendButton), animated: false)
         self.navigationItem.setRightBarButton(UIBarButtonItem(customView: naviSettingButton), animated: false)
     }
     
-
+    private func bind() {
+        userNameLabel.text = viewModel.getUserName()
+    }
+    
+    private func setTapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(headerViewDidTap))
+        headerView.addGestureRecognizer(tap)
+    }
+    
+    @objc private func headerViewDidTap() {
+        let profileViewController = ProfileViewController()
+        profileViewController.viewModel = ProfileViewModel(userModel: viewModel.userModel)
+        
+        profileViewController.modalPresentationStyle = .fullScreen
+        present(profileViewController, animated: true, completion: nil)
+    }
 }
