@@ -15,6 +15,7 @@ final class SignInViewModel: ViewModelType {
         let emailText: Published<String>.Publisher
         let passwordText: Published<String>.Publisher
     }
+    
     struct Output {
         var isSignInValid = PassthroughSubject<Bool, Never>()
     }
