@@ -37,7 +37,7 @@ extension UIColor {
     }
     
     static var lineLightGray: UIColor {
-        return UIColor(hex: "#FA7AD")
+        return UIColor(hex: "#9FA7AD")
     }
 }
 
