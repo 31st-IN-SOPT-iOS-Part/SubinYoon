@@ -44,7 +44,6 @@ final class SignUpViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel = SignUpViewModel()
         configureUI()
         bind()
     }
@@ -85,11 +84,7 @@ final class SignUpViewController: UIViewController {
     }
     
     @objc private func signUpButtonDidTap() {
-        let userModel = UserModel(email: emailTextFieldView.text, password: passwordTextFieldView.text)
-        let authCompleteViewModel = AuthCompleteViewModel(userModel: userModel)
-        let authCompleteViewController = AuthCompleteViewController()
-        
-        authCompleteViewController.viewModel = authCompleteViewModel
+        let authCompleteViewController = ModuleFactory.shared.makeAuthCompleteViewController(email: emailTextFieldView.text, password: passwordTextFieldView.text)
         authCompleteViewController.modalPresentationStyle = .fullScreen
         present(authCompleteViewController, animated: true, completion: nil)
     }

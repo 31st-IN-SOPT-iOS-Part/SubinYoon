@@ -6,3 +6,53 @@
 //
 
 import Foundation
+
+protocol ModuleFactoryProtocol {
+    func makeSignInViewController() -> SignInViewController
+    func makeSignUpViewController() -> SignUpViewController
+    func makeAuthCompleteViewController(email: String, password: String) -> AuthCompleteViewController
+    func makeFriendsViewController(userModel: UserModel) -> FriendsViewController
+    func makeProfileViewController(userModel: UserModel) -> ProfileViewController
+}
+
+final class ModuleFactory: ModuleFactoryProtocol {
+    
+    static let shared = ModuleFactory()
+    private init() { }
+    
+    func makeSignInViewController() -> SignInViewController {
+        let viewModel = SignInViewModel()
+        let signInViewController = SignInViewController()
+        signInViewController.viewModel = viewModel
+        return signInViewController
+    }
+    
+    func makeSignUpViewController() -> SignUpViewController {
+        let viewModel = SignUpViewModel()
+        let signUpViewController = SignUpViewController()
+        signUpViewController.viewModel = viewModel
+        return signUpViewController
+    }
+    
+    func makeAuthCompleteViewController(email: String, password: String) -> AuthCompleteViewController {
+        let userModel = UserModel(email: email, password: password)
+        let viewModel = AuthCompleteViewModel(userModel: userModel)
+        let authCompleteViewController = AuthCompleteViewController()
+        authCompleteViewController.viewModel = viewModel
+        return authCompleteViewController
+    }
+    
+    func makeFriendsViewController(userModel: UserModel) -> FriendsViewController {
+        let viewModel = FriendsViewModel(userModel: userModel)
+        let friendsViewController = FriendsViewController()
+        friendsViewController.viewModel = viewModel
+        return friendsViewController
+    }
+    
+    func makeProfileViewController(userModel: UserModel) -> ProfileViewController {
+        let viewModel = ProfileViewModel(userModel: userModel)
+        let profileViewController = ProfileViewController()
+        profileViewController.viewModel = viewModel
+        return profileViewController
+    }
+}

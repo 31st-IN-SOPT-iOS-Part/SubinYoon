@@ -22,6 +22,7 @@
 		8E774D4328F86BA10094E45E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774D4228F86BA10094E45E /* ProfileViewModel.swift */; };
 		8E774D4528F86BDD0094E45E /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774D4428F86BDD0094E45E /* FriendsViewController.swift */; };
 		8E774D4728F86BE70094E45E /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774D4628F86BE70094E45E /* FriendsViewModel.swift */; };
+		8E82360728FC491900B9FBEF /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E82360628FC491900B9FBEF /* ModuleFactory.swift */; };
 		8EF111D528F7FBF000A1D665 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111D428F7FBF000A1D665 /* ImageLiterals.swift */; };
 		8EF111D728F7FC0000A1D665 /* ColorLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111D628F7FC0000A1D665 /* ColorLiterals.swift */; };
 		8EF111DB28F7FECD00A1D665 /* addSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111DA28F7FECD00A1D665 /* addSubviews.swift */; };
@@ -46,7 +47,6 @@
 		8E5BF4C728E9C77E00802AE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E5BF4CA28E9C77E00802AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E5BF4CC28E9C77E00802AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E5BF4F128EB40F200802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF4F328EB40FF00802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF4F928EB412100802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8E5BF50128EB415600802AE9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -61,6 +61,7 @@
 		8E774D4228F86BA10094E45E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8E774D4428F86BDD0094E45E /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		8E774D4628F86BE70094E45E /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
+		8E82360628FC491900B9FBEF /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
 		8EF111D428F7FBF000A1D665 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		8EF111D628F7FC0000A1D665 /* ColorLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLiterals.swift; sourceTree = "<group>"; };
 		8EF111DA28F7FECD00A1D665 /* addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSubviews.swift; sourceTree = "<group>"; };
@@ -231,7 +232,7 @@
 		8E5BF4DF28EB3F4800802AE9 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				8E5BF4F128EB40F200802AE9 /* .gitkeep */,
+				8E82360628FC491900B9FBEF /* ModuleFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -547,6 +548,7 @@
 				8E774D3028F85D9F0094E45E /* SignUpViewModel.swift in Sources */,
 				8EF111EC28F8043600A1D665 /* AuthTextFieldView.swift in Sources */,
 				8EF111E328F8000100A1D665 /* UITextField+.swift in Sources */,
+				8E82360728FC491900B9FBEF /* ModuleFactory.swift in Sources */,
 				8E774D4528F86BDD0094E45E /* FriendsViewController.swift in Sources */,
 				8EF111DB28F7FECD00A1D665 /* addSubviews.swift in Sources */,
 				8EF111DF28F7FFB800A1D665 /* UIViewController+.swift in Sources */,

@@ -90,9 +90,7 @@ final class FriendsViewController: UIViewController {
     }
     
     @objc private func headerViewDidTap() {
-        let profileViewController = ProfileViewController()
-        profileViewController.viewModel = ProfileViewModel(userModel: viewModel.userModel)
-        
+        let profileViewController = ModuleFactory.shared.makeProfileViewController(userModel: viewModel.userModel)
         profileViewController.modalPresentationStyle = .fullScreen
         present(profileViewController, animated: true, completion: nil)
     }
