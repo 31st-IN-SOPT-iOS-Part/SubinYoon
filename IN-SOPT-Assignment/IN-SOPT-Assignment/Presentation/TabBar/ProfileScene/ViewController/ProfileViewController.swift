@@ -31,7 +31,7 @@ final class ProfileViewController: UIViewController {
         $0.textColor = .white
     }
     
-    private let verticalLine = UIView().then {
+    private let horizontalLine = UIView().then {
         $0.backgroundColor = .lineLightGray
     }
     
@@ -57,7 +57,7 @@ final class ProfileViewController: UIViewController {
     private func configureUI() {
         view.backgroundColor = .friendTabBackground
         
-        view.addSubviews(cancelButton, userImageView, userNameLabel, verticalLine, bottomStackView)
+        view.addSubviews(cancelButton, userImageView, userNameLabel, horizontalLine, bottomStackView)
         
         cancelButton.snp.makeConstraints { make in
             make.leading.equalTo(view.safeAreaLayoutGuide).inset(18)
@@ -75,7 +75,7 @@ final class ProfileViewController: UIViewController {
             make.top.equalTo(userImageView.snp.bottom).offset(8)
         }
         
-        verticalLine.snp.makeConstraints { make in
+        horizontalLine.snp.makeConstraints { make in
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             make.top.equalTo(userNameLabel.snp.bottom).offset(40)
             make.height.equalTo(1)
@@ -83,7 +83,7 @@ final class ProfileViewController: UIViewController {
         
         bottomStackView.snp.makeConstraints { make in
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(50)
-            make.top.equalTo(verticalLine.snp.bottom).offset(10)
+            make.top.equalTo(horizontalLine.snp.bottom).offset(10)
             make.height.equalTo(72)
         }
     }
