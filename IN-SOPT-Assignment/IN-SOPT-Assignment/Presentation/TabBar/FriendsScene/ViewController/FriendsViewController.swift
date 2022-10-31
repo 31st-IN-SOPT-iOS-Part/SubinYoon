@@ -44,11 +44,6 @@ final class FriendsViewController: UIViewController {
         setTapGesture()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = false
-    }
-    
     // MARK: - Functions
     private func configureUI() {
         navigationBarUI()
@@ -90,7 +85,7 @@ final class FriendsViewController: UIViewController {
     }
     
     @objc private func headerViewDidTap() {
-        let profileViewController = ModuleFactory.shared.makeProfileViewController(userModel: viewModel.userModel)
+        let profileViewController = ModuleFactory.shared.makeProfileViewController()
         profileViewController.modalPresentationStyle = .fullScreen
         present(profileViewController, animated: true, completion: nil)
     }

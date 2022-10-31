@@ -8,10 +8,8 @@
 import Combine
 
 final class ProfileViewModel: ViewModelType {
-    var userModel: UserModel
 
-    init(userModel: UserModel) {
-        self.userModel = userModel
+    init() {
     }
 
     struct Input {
@@ -21,7 +19,7 @@ final class ProfileViewModel: ViewModelType {
     }
     
     func getUserName() -> String {
-        return userModel.email
+        return "윤솝트"
     }
 }
 
