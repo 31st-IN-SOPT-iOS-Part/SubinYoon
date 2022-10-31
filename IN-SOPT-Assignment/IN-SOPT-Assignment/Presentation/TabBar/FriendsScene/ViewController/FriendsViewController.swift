@@ -27,7 +27,7 @@ final class FriendsViewController: UIViewController {
     private lazy var headerView = UIView()
     
     private let userImageView = UIImageView().then {
-        $0.image = ImageLiterals.profileImg
+        $0.image = ImageLiterals.profileImgSample
         $0.contentMode = .scaleAspectFit
     }
     

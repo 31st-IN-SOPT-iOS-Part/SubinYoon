@@ -10,6 +10,7 @@ import UIKit
 enum ImageLiterals {
     
     static var profileImgSample: UIImage { .load(named: "friendtabProfileImg") }
+    static var subinImage: UIImage { .load(named: "SubinImage")}
     
     static var profileImg1: UIImage { .load(named: "profileImage1") }
     static var profileImg2: UIImage { .load(named: "profileImage2") }

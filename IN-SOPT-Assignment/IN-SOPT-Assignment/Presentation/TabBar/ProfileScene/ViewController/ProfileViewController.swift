@@ -22,7 +22,7 @@ final class ProfileViewController: UIViewController {
     }
     
     private let userImageView = UIImageView().then {
-        $0.image = ImageLiterals.profileImg
+        $0.image = ImageLiterals.profileImgSample
         $0.contentMode = .scaleAspectFit
     }
     
