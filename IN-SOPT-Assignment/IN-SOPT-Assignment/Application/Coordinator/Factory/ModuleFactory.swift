@@ -11,8 +11,9 @@ protocol ModuleFactoryProtocol {
     func makeSignInViewController() -> SignInViewController
     func makeSignUpViewController() -> SignUpViewController
     func makeAuthCompleteViewController(email: String, password: String) -> AuthCompleteViewController
-    func makeFriendsViewController(userModel: UserModel) -> FriendsViewController
-    func makeProfileViewController(userModel: UserModel) -> ProfileViewController
+    func makeFriendsViewController() -> FriendsViewController
+    func makeProfileViewController() -> ProfileViewController
+    func makeTabbarController() -> KakaoTabbarController
 }
 
 final class ModuleFactory: ModuleFactoryProtocol {
@@ -42,17 +43,22 @@ final class ModuleFactory: ModuleFactoryProtocol {
         return authCompleteViewController
     }
     
-    func makeFriendsViewController(userModel: UserModel) -> FriendsViewController {
-        let viewModel = FriendsViewModel(userModel: userModel)
+    func makeFriendsViewController() -> FriendsViewController {
+        let viewModel = FriendsViewModel()
         let friendsViewController = FriendsViewController()
         friendsViewController.viewModel = viewModel
         return friendsViewController
     }
     
-    func makeProfileViewController(userModel: UserModel) -> ProfileViewController {
-        let viewModel = ProfileViewModel(userModel: userModel)
+    func makeProfileViewController() -> ProfileViewController {
+        let viewModel = ProfileViewModel()
         let profileViewController = ProfileViewController()
         profileViewController.viewModel = viewModel
         return profileViewController
+    }
+    
+    func makeTabbarController() -> KakaoTabbarController {
+        let tabbarController = KakaoTabbarController()
+        return tabbarController
     }
 }

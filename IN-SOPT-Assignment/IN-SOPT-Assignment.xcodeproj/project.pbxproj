@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E55C7C829097B3000E4730E /* KakaoTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E55C7C729097B3000E4730E /* KakaoTabbarController.swift */; };
+		8E55C7CE29097CE600E4730E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E55C7CD29097CE600E4730E /* ChatViewController.swift */; };
+		8E55C7D029097CF400E4730E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E55C7CF29097CF400E4730E /* SearchViewController.swift */; };
+		8E55C7D229097D0200E4730E /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E55C7D129097D0200E4730E /* ShopViewController.swift */; };
+		8E55C7D429097D0C00E4730E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E55C7D329097D0C00E4730E /* SettingViewController.swift */; };
 		8E5BF4BF28E9C77E00802AE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5BF4BE28E9C77E00802AE9 /* AppDelegate.swift */; };
 		8E5BF4C128E9C77E00802AE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5BF4C028E9C77E00802AE9 /* SceneDelegate.swift */; };
 		8E5BF4C328E9C77E00802AE9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5BF4C228E9C77E00802AE9 /* SignInViewController.swift */; };
@@ -40,6 +45,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E55C7C729097B3000E4730E /* KakaoTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTabbarController.swift; sourceTree = "<group>"; };
+		8E55C7CD29097CE600E4730E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		8E55C7CF29097CF400E4730E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8E55C7D129097D0200E4730E /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		8E55C7D329097D0C00E4730E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8E5BF4BB28E9C77E00802AE9 /* IN-SOPT-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IN-SOPT-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E5BF4BE28E9C77E00802AE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E5BF4C028E9C77E00802AE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +103,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E55C7C529097AE600E4730E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8E55C7C729097B3000E4730E /* KakaoTabbarController.swift */,
+				8E774D3428F86ABD0094E45E /* ProfileScene */,
+				8E774D3328F86A9F0094E45E /* FriendsScene */,
+				8E55C7C929097C3600E4730E /* ChatScene */,
+				8E55C7CA29097C7C00E4730E /* SearchScene */,
+				8E55C7CB29097CAF00E4730E /* ShopScene */,
+				8E55C7CC29097CB600E4730E /* SettingScene */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8E55C7C629097AF500E4730E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8E5BF4E128EB3FA500802AE9 /* SignInScene */,
+				8E5BF4E028EB3F8900802AE9 /* SignUpScene */,
+				8E5BF50928EB424800802AE9 /* AuthCompleteScene */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		8E55C7C929097C3600E4730E /* ChatScene */ = {
+			isa = PBXGroup;
+			children = (
+				8E55C7CD29097CE600E4730E /* ChatViewController.swift */,
+			);
+			path = ChatScene;
+			sourceTree = "<group>";
+		};
+		8E55C7CA29097C7C00E4730E /* SearchScene */ = {
+			isa = PBXGroup;
+			children = (
+				8E55C7CF29097CF400E4730E /* SearchViewController.swift */,
+			);
+			path = SearchScene;
+			sourceTree = "<group>";
+		};
+		8E55C7CB29097CAF00E4730E /* ShopScene */ = {
+			isa = PBXGroup;
+			children = (
+				8E55C7D129097D0200E4730E /* ShopViewController.swift */,
+			);
+			path = ShopScene;
+			sourceTree = "<group>";
+		};
+		8E55C7CC29097CB600E4730E /* SettingScene */ = {
+			isa = PBXGroup;
+			children = (
+				8E55C7D329097D0C00E4730E /* SettingViewController.swift */,
+			);
+			path = SettingScene;
+			sourceTree = "<group>";
+		};
 		8E5BF4B228E9C77D00802AE9 = {
 			isa = PBXGroup;
 			children = (
@@ -147,11 +213,8 @@
 		8E5BF4D428EB390D00802AE9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				8E5BF4E128EB3FA500802AE9 /* SignInScene */,
-				8E5BF4E028EB3F8900802AE9 /* SignUpScene */,
-				8E5BF50928EB424800802AE9 /* AuthCompleteScene */,
-				8E774D3328F86A9F0094E45E /* FriendsScene */,
-				8E774D3428F86ABD0094E45E /* ProfileScene */,
+				8E55C7C629097AF500E4730E /* Auth */,
+				8E55C7C529097AE600E4730E /* TabBar */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -544,9 +607,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E55C7D429097D0C00E4730E /* SettingViewController.swift in Sources */,
 				8E5BF4C328E9C77E00802AE9 /* SignInViewController.swift in Sources */,
 				8E774D3028F85D9F0094E45E /* SignUpViewModel.swift in Sources */,
 				8EF111EC28F8043600A1D665 /* AuthTextFieldView.swift in Sources */,
+				8E55C7D029097CF400E4730E /* SearchViewController.swift in Sources */,
 				8EF111E328F8000100A1D665 /* UITextField+.swift in Sources */,
 				8E82360728FC491900B9FBEF /* ModuleFactory.swift in Sources */,
 				8E774D4528F86BDD0094E45E /* FriendsViewController.swift in Sources */,
@@ -555,16 +620,19 @@
 				8E774D3228F85DAF0094E45E /* SignUpViewController.swift in Sources */,
 				8EF111D528F7FBF000A1D665 /* ImageLiterals.swift in Sources */,
 				8E5BF4BF28E9C77E00802AE9 /* AppDelegate.swift in Sources */,
+				8E55C7D229097D0200E4730E /* ShopViewController.swift in Sources */,
 				8E774D4128F86B750094E45E /* ProfileViewController.swift in Sources */,
 				8EF111D728F7FC0000A1D665 /* ColorLiterals.swift in Sources */,
 				8EF1120128F8528F00A1D665 /* AuthCompleteViewController.swift in Sources */,
 				8E5BF4C128E9C77E00802AE9 /* SceneDelegate.swift in Sources */,
 				8EF1120528F853FD00A1D665 /* UserModel.swift in Sources */,
+				8E55C7C829097B3000E4730E /* KakaoTabbarController.swift in Sources */,
 				8E774D4328F86BA10094E45E /* ProfileViewModel.swift in Sources */,
 				8EF111E928F8017400A1D665 /* ViewModelType.swift in Sources */,
 				8EF111E628F800D100A1D665 /* SignInViewModel.swift in Sources */,
 				8EF111DD28F7FF0400A1D665 /* getClassName.swift in Sources */,
 				8EF111E128F7FFEF00A1D665 /* Adjusted+.swift in Sources */,
+				8E55C7CE29097CE600E4730E /* ChatViewController.swift in Sources */,
 				8E774D4728F86BE70094E45E /* FriendsViewModel.swift in Sources */,
 				8EF1120328F852B300A1D665 /* AuthCompleteViewModel.swift in Sources */,
 				8EF5733828F8EB67008D4842 /* BottomButtonView.swift in Sources */,

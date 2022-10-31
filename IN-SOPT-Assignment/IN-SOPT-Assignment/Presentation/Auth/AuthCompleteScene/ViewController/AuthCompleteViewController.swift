@@ -58,7 +58,7 @@ final class AuthCompleteViewController: UIViewController {
     }
     
     @objc private func completeButtonDidTap() {
-        let friendsViewController = ModuleFactory.shared.makeFriendsViewController(userModel: viewModel.userModel)
+        let friendsViewController = ModuleFactory.shared.makeFriendsViewController()
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootVC(friendsViewController, animated: false)
     }
 }
