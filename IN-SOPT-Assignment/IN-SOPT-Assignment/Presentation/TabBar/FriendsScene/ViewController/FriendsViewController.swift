@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class FriendsViewController: UIViewController {
+final class FriendsViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Properties
     var viewModel: FriendsViewModel!
@@ -24,24 +24,20 @@ final class FriendsViewController: UIViewController {
         $0.frame = CGRect(x: 0, y: 0, width: 21, height: 21)
     }
     
-    private lazy var headerView = UIView()
-    
-    private let userImageView = UIImageView().then {
-        $0.image = ImageLiterals.profileImgSample
-        $0.contentMode = .scaleAspectFit
+    private let friendsListTableView = UITableView(frame: .zero, style: .grouped).then {
+        $0.backgroundColor = .white
+        $0.showsVerticalScrollIndicator = false
+        $0.separatorStyle = .none
     }
     
-    private let userNameLabel = UILabel().then {
-        $0.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        $0.textColor = .black
-    }
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         bind()
-        setTapGesture()
+        setDelegate()
+        registerCells()
     }
     
     // MARK: - Functions
@@ -50,23 +46,10 @@ final class FriendsViewController: UIViewController {
         
         view.backgroundColor = .white
         
-        view.addSubview(headerView)
-        headerView.addSubviews(userImageView, userNameLabel)
+        view.addSubview(friendsListTableView)
 
-        headerView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(80)
-        }
-        
-        userImageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(14)
-            make.centerY.equalToSuperview()
-            make.height.width.equalTo(58)
-        }
-        
-        userNameLabel.snp.makeConstraints { make in
-            make.leading.equalTo(userImageView.snp.trailing).offset(10)
-            make.centerY.equalToSuperview()
+        friendsListTableView.snp.makeConstraints { make in
+            make.top.leading.bottom.trailing.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -76,16 +59,69 @@ final class FriendsViewController: UIViewController {
     }
     
     private func bind() {
-        userNameLabel.text = viewModel.getUserName()
     }
     
-    private func setTapGesture() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(headerViewDidTap))
-        headerView.addGestureRecognizer(tap)
+    private func setDelegate() {
+        friendsListTableView.delegate = self
+        friendsListTableView.dataSource = self
     }
     
-    @objc private func headerViewDidTap() {
-        let profileViewController = ModuleFactory.shared.makeProfileViewController()
+    private func registerCells() {
+        friendsListTableView.register(FriendsTableViewHeader.self, forHeaderFooterViewReuseIdentifier: FriendsTableViewHeader.className)
+        friendsListTableView.register(FriendsTVC.self, forCellReuseIdentifier: FriendsTVC.className)
+    }
+    
+    @objc private func headerViewDidTap(gestureRecognizer: UIGestureRecognizer) {
+        let profileViewController = ModuleFactory.shared.makeProfileViewController(userModel: FriendsModel())
+        profileViewController.modalPresentationStyle = .fullScreen
+        present(profileViewController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension FriendsViewController: UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 75
+    }
+    
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: FriendsTableViewHeader.className)
+                as? FriendsTableViewHeader else { return UIView() }
+        headerView.initHeader(model: viewModel.getUserModel())
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(headerViewDidTap))
+        tapGesture.delegate = self
+        headerView.addGestureRecognizer(tapGesture)
+        
+        return headerView
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension FriendsViewController: UITableViewDataSource {
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.getFriendsCellCount()
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: FriendsTVC.className, for: indexPath)
+                as? FriendsTVC else { return UITableViewCell() }
+        cell.selectionStyle = .none
+        cell.initCell(model: viewModel.friendsModel[indexPath.row])
+
+        return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let profileViewController = ModuleFactory.shared.makeProfileViewController(userModel: viewModel.friendsModel[indexPath.row])
         profileViewController.modalPresentationStyle = .fullScreen
         present(profileViewController, animated: true, completion: nil)
     }

@@ -8,6 +8,8 @@
 import Combine
 
 final class FriendsViewModel: ViewModelType {
+    
+    var friendsModel: [FriendsModel] = FriendsModel.sampleData
 
     init() {
     }
@@ -17,15 +19,19 @@ final class FriendsViewModel: ViewModelType {
 
     struct Output {
     }
-    
-    func getUserName() -> String {
-        return "윤솝트"
-    }
 }
 
 extension FriendsViewModel {
     func transform(from input: Input) -> Output {
         let output = Output()
         return output
+    }
+    
+    func getFriendsCellCount() -> Int {
+        return friendsModel.count
+    }
+    
+    func getUserModel() -> UserModel {
+        return UserModel()
     }
 }
