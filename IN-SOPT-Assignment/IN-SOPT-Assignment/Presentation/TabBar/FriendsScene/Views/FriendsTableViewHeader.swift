@@ -29,7 +29,6 @@ final class FriendsTableViewHeader: UITableViewHeaderFooterView {
     }
     
     // MARK: - Initialization
-    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         self.setUI()
@@ -42,7 +41,6 @@ final class FriendsTableViewHeader: UITableViewHeaderFooterView {
 }
 
 // MARK: - Methods
-
 extension FriendsTableViewHeader {
     func initHeader(model: UserModel) {
         profileImageView.image = model.profileImage
