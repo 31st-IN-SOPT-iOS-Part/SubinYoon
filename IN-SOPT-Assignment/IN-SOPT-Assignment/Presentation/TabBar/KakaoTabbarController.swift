@@ -52,7 +52,7 @@ extension KakaoTabbarController : UITabBarControllerDelegate {
         let friendViewController = ModuleFactory.shared.makeFriendsViewController(userModel: UserModel())
         let friendNavigationController =  UINavigationController(rootViewController: friendViewController)
         
-        let chatViewController = ChatViewController()
+        let chatViewController = ModuleFactory.shared.makeChatViewController()
         let chatNavigationController = UINavigationController(rootViewController: chatViewController)
         
         let searchViewController = SearchViewController()
