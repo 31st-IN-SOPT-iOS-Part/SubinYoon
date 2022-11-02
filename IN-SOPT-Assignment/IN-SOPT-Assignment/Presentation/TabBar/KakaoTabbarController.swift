@@ -41,7 +41,6 @@ class KakaoTabbarController: UITabBarController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-
     }
 }
 
@@ -65,7 +64,6 @@ extension KakaoTabbarController : UITabBarControllerDelegate {
         let settingViewController = SettingViewController()
         let settingNavigationController = UINavigationController(rootViewController: settingViewController)
         
-        
         let viewControllers = [
             friendNavigationController,
             chatNavigationController,
@@ -85,7 +83,6 @@ extension KakaoTabbarController : UITabBarControllerDelegate {
         tabBar.barStyle = UIBarStyle.default
         tabBar.barTintColor = UIColor.white
         
-        
         let imageNames = [
             ImageLiterals.friendTabIcn,
             ImageLiterals.chatTabIcn,
@@ -102,10 +99,8 @@ extension KakaoTabbarController : UITabBarControllerDelegate {
             ImageLiterals.settingTabIcnSelected
         ]
         
-        
         for (index, value) in (tabBar.items?.enumerated())! {
             let tabBarItem: UITabBarItem = value as UITabBarItem
-            
             tabBarItem.image = imageNames[index].withRenderingMode(.alwaysOriginal)
             tabBarItem.selectedImage = imageSelectedNames[index].withRenderingMode(.alwaysOriginal)
         }
