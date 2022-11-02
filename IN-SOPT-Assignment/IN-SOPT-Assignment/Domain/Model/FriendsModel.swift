@@ -9,7 +9,7 @@ import UIKit
 
 struct FriendsModel {
     var profileImage: UIImage = ImageLiterals.profileImgSample
-    var userName: String = ""
+    var userName: String = "빙수윤"
     var caption: String?
 }
 

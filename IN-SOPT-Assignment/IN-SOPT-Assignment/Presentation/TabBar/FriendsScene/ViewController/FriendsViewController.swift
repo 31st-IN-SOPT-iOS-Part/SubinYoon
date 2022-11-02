@@ -26,8 +26,8 @@ final class FriendsViewController: UIViewController, UIGestureRecognizerDelegate
     
     private let friendsListTableView = UITableView(frame: .zero, style: .grouped).then {
         $0.backgroundColor = .white
-        $0.showsVerticalScrollIndicator = false
         $0.separatorStyle = .none
+        $0.tableFooterView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: CGFloat.leastNonzeroMagnitude))
     }
     
     
@@ -49,7 +49,7 @@ final class FriendsViewController: UIViewController, UIGestureRecognizerDelegate
         view.addSubview(friendsListTableView)
 
         friendsListTableView.snp.makeConstraints { make in
-            make.top.leading.bottom.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -99,6 +99,14 @@ extension FriendsViewController: UITableViewDelegate {
         headerView.addGestureRecognizer(tapGesture)
         
         return headerView
+    }
+
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+
+    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
     }
 }
 

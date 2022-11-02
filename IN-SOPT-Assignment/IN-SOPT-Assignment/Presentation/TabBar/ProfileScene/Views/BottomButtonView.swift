@@ -13,7 +13,6 @@ final class BottomButtonView: UIView {
     private let containterView = UIView()
     
     private let iconImageView = UIImageView().then {
-        $0.image = ImageLiterals.profileImgSample
         $0.contentMode = .scaleAspectFit
     }
     
