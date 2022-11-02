@@ -5,11 +5,15 @@
 //  Created by devxsby on 2022/10/14.
 //
 
+import UIKit
 import Combine
 
 final class ProfileViewModel: ViewModelType {
 
-    init() {
+    var userModel: FriendsModel
+    
+    init(userModel: FriendsModel) {
+        self.userModel = userModel
     }
 
     struct Input {
@@ -19,7 +23,11 @@ final class ProfileViewModel: ViewModelType {
     }
     
     func getUserName() -> String {
-        return "윤솝트"
+        return userModel.userName
+    }
+    
+    func getUserImage() -> UIImage {
+        return userModel.profileImage
     }
 }
 

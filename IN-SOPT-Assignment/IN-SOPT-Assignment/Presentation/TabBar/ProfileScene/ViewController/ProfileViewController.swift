@@ -22,7 +22,7 @@ final class ProfileViewController: UIViewController {
     }
     
     private let userImageView = UIImageView().then {
-        $0.image = ImageLiterals.profileImgSample
+//        $0.image = ImageLiterals.profileImgSample
         $0.contentMode = .scaleAspectFit
     }
     
@@ -89,6 +89,7 @@ final class ProfileViewController: UIViewController {
     }
     
     private func bind() {
+        userImageView.image = viewModel.getUserImage()
         userNameLabel.text = viewModel.getUserName()
     }
     
