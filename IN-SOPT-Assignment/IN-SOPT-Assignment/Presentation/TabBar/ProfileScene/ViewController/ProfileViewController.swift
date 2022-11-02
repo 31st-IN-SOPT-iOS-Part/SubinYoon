@@ -22,7 +22,6 @@ final class ProfileViewController: UIViewController {
     }
     
     private let userImageView = UIImageView().then {
-//        $0.image = ImageLiterals.profileImgSample
         $0.contentMode = .scaleAspectFit
     }
     
@@ -36,9 +35,7 @@ final class ProfileViewController: UIViewController {
     }
     
     private let chatView = BottomButtonView(imageName: ImageLiterals.talkIcn, title: "나와의 채팅")
-    
     private let editProfileView = BottomButtonView(imageName: ImageLiterals.editIcn, title: "프로필 편집")
-    
     private let kakaoStoryView = BottomButtonView(imageName: ImageLiterals.storyIcn, title: "카카오스토리")
     
     private lazy var bottomStackView = UIStackView(arrangedSubviews: [chatView, editProfileView, kakaoStoryView]).then {
