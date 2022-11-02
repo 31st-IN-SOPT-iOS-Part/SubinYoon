@@ -28,6 +28,7 @@ enum ImageLiterals {
     static var storyIcn: UIImage { .load(named: "profileStoryImg") }
     static var talkIcn: UIImage { .load(named: "profileTalkImg") }
     static var plusIcn: UIImage { .load(named: "iconPlus") }
+    static var cameraIcn: UIImage { .load(named: "iconCamera") }
     
     static var friendTabIcn: UIImage { .load(named: "friendTabIcon") }
     static var friendTabIcnSelected: UIImage { .load(named: "friendTabIcon_selected") }
