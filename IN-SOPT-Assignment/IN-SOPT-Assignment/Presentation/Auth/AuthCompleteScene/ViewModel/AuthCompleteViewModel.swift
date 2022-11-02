@@ -15,6 +15,6 @@ struct AuthCompleteViewModel {
     }
     
     func getUserEmail() -> String {
-        return "\(userModel.email)님\n환영합니다"
+        return "\(userModel.userName)님\n환영합니다"
     }
 }

@@ -5,9 +5,10 @@
 //  Created by devxsby on 2022/10/13.
 //
 
-import Foundation
+import UIKit
 
 struct UserModel {
-    var email: String = "윤수빈"
-    var password: String = "123"
+    var profileImage: UIImage = ImageLiterals.profileImgSample
+    var userName: String = "빙수윤"
+    var caption: String = "빙수를 좋아하는 여성"
 }

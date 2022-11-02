@@ -50,7 +50,7 @@ extension KakaoTabbarController : UITabBarControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let friendViewController = ModuleFactory.shared.makeFriendsViewController()
+        let friendViewController = ModuleFactory.shared.makeFriendsViewController(userModel: UserModel())
         let friendNavigationController =  UINavigationController(rootViewController: friendViewController)
         
         let chatViewController = ChatViewController()
