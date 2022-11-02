@@ -100,7 +100,21 @@ extension FriendsViewController: UITableViewDelegate {
         
         return headerView
     }
-
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .normal, title: "삭제") { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
+            self.viewModel.friendsModel.remove(at: indexPath.row)
+            self.friendsListTableView.reloadData()
+            success(true)
+        }
+        delete.backgroundColor = .systemRed
+        
+        let config = UISwipeActionsConfiguration(actions: [delete])
+        config.performsFirstActionWithFullSwipe = false
+        
+        return config
+    }
+    
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
