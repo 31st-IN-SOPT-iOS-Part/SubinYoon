@@ -12,6 +12,8 @@ final class FriendsViewController: UIViewController, UIGestureRecognizerDelegate
     
     // MARK: - Properties
     var viewModel: FriendsViewModel!
+    private var viewWillAppear = PassthroughSubject<Void, Error>()
+    private var friendsModelList = [FriendsModel]()
     private var cancellable: Set<AnyCancellable> = []
 
     // MARK: - UI
@@ -40,6 +42,11 @@ final class FriendsViewController: UIViewController, UIGestureRecognizerDelegate
         registerCells()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewWillAppear.send()
+    }
+    
     // MARK: - Functions
     private func configureUI() {
         navigationBarUI()
@@ -59,6 +66,13 @@ final class FriendsViewController: UIViewController, UIGestureRecognizerDelegate
     }
     
     private func bind() {
+        let input = FriendsViewModel.Input(viewWillAppear: viewWillAppear)
+        let output = viewModel.transform(from: input)
+        
+        output.friendsModel.sink { _ in
+        } receiveValue: { models in
+            self.friendsModelList = models
+        }.store(in: &cancellable)
     }
     
     private func setDelegate() {
@@ -103,7 +117,7 @@ extension FriendsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .normal, title: "삭제") { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
-            self.viewModel.friendsModel.remove(at: indexPath.row)
+            self.friendsModelList.remove(at: indexPath.row)
             self.friendsListTableView.reloadData()
             success(true)
         }
@@ -128,7 +142,7 @@ extension FriendsViewController: UITableViewDelegate {
 extension FriendsViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getFriendsCellCount()
+        return friendsModelList.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -137,13 +151,13 @@ extension FriendsViewController: UITableViewDataSource {
             withIdentifier: FriendsTVC.className, for: indexPath)
                 as? FriendsTVC else { return UITableViewCell() }
         cell.selectionStyle = .none
-        cell.initCell(model: viewModel.friendsModel[indexPath.row])
+        cell.initCell(model: friendsModelList[indexPath.row])
 
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let profileViewController = ModuleFactory.shared.makeProfileViewController(userModel: viewModel.friendsModel[indexPath.row])
+        let profileViewController = ModuleFactory.shared.makeProfileViewController(userModel: friendsModelList[indexPath.row])
         profileViewController.modalPresentationStyle = .fullScreen
         present(profileViewController, animated: true, completion: nil)
     }
