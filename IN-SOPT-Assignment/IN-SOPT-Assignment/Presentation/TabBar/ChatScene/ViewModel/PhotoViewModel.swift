@@ -9,21 +9,19 @@ import Combine
 import UIKit
 
 final class PhotoViewModel: ViewModelType {
-    
-    private var cancellable: Set<AnyCancellable> = []
-    
+        
     var photoModel: [PhotoModel] = PhotoModel.sampleData
+    private var cancellable: Set<AnyCancellable> = []
 
     init() {
     }
 
     struct Input {
-        var photo = PassthroughSubject<PhotoModel, Error>()
+        var viewWillAppear: PassthroughSubject<Void, Error>
     }
 
     struct Output {
-        var count = PassthroughSubject<Int, Never>()
-        var isCellClicked = PassthroughSubject<Bool, Never>()
+        var photoModel = PassthroughSubject<[PhotoModel], Error>()
     }
 }
 
@@ -31,10 +29,11 @@ extension PhotoViewModel {
     func transform(from input: Input) -> Output {
         let output = Output()
         
+        input.viewWillAppear.sink { _ in
+        } receiveValue: { value in
+            output.photoModel.send(self.photoModel)
+        }.store(in: &cancellable)
+        
         return output
-    }
-    
-    func getPhotoCellCount() -> Int {
-        return photoModel.count
     }
 }

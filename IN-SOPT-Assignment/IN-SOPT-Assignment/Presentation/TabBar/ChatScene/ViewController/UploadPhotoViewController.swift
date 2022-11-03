@@ -7,11 +7,13 @@
 
 import UIKit
 import Combine
-final class UploadPhotoViewController : UIViewController {
+
+final class UploadPhotoViewController: UIViewController {
     
     // MARK: - Properties
     var viewModel: PhotoViewModel!
-    private var selectedPhotoIndex = PassthroughSubject<Int, Error>()
+    private var viewWillAppear = PassthroughSubject<Void, Error>()
+    private var photoModelList = [PhotoModel]()
     private var cancellable: Set<AnyCancellable> = []
     
     // MARK: - UI
@@ -30,7 +32,6 @@ final class UploadPhotoViewController : UIViewController {
     }
     
     private let photoCountLabel = UILabel().then {
-        $0.text = ""
         $0.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         $0.textColor = .buttonYellow
     }
@@ -56,6 +57,11 @@ final class UploadPhotoViewController : UIViewController {
         bind()
         setDelegate()
         registerCells()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewWillAppear.send()
     }
     
     // MARK: - Functions
@@ -99,9 +105,13 @@ final class UploadPhotoViewController : UIViewController {
     }
     
     private func bind() {
-//        let input = PhotoViewModel.Input(photo: viewModel.photoModel[selectedPhotoIndex])
-//        let output = viewModel.transform(from: input)
-    
+        let input = PhotoViewModel.Input(viewWillAppear: viewWillAppear)
+        let output = viewModel.transform(from: input)
+        
+        output.photoModel.sink { _ in
+        } receiveValue: { models in
+            self.photoModelList = models
+        }.store(in: &cancellable)
     }
     
     private func setDelegate() {
@@ -127,7 +137,7 @@ final class UploadPhotoViewController : UIViewController {
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension UploadPhotoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.getPhotoCellCount() + 1
+        return photoModelList.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -139,7 +149,7 @@ extension UploadPhotoViewController: UICollectionViewDelegate, UICollectionViewD
         } else {
             guard let listCell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoListCVC.className, for: indexPath)
                     as? PhotoListCVC else { return UICollectionViewCell() }
-            listCell.initCell(model: viewModel.photoModel[indexPath.item - 1])
+            listCell.initCell(model: photoModelList[indexPath.item - 1])
             return listCell
         }
     }
@@ -148,7 +158,7 @@ extension UploadPhotoViewController: UICollectionViewDelegate, UICollectionViewD
         if indexPath.item == 0 {
             // 진짜 카메라 띄우기
         } else {
-            // 셀 클릭 이벤트
+            
         }
     }
 }
