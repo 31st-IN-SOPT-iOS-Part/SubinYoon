@@ -12,6 +12,8 @@ final class ChatViewController: UIViewController {
     
     // MARK: - Properties
     var viewModel: ChatViewModel!
+    var viewWillAppear = PassthroughSubject<Void, Error>()
+    private var chatModelList = [ChatModel]()
     private var cancellable: Set<AnyCancellable> = []
     
     // MARK: - UI
@@ -51,6 +53,11 @@ final class ChatViewController: UIViewController {
         registerCells()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewWillAppear.send()
+    }
+    
     // MARK: - Functions
     private func configureUI() {
         navigationBarUI()
@@ -73,6 +80,13 @@ final class ChatViewController: UIViewController {
     }
     
     private func bind() {
+        let input = ChatViewModel.Input(viewWillAppear: viewWillAppear)
+        let output = viewModel.transform(from: input)
+        
+        output.chatModel.sink { _ in
+        } receiveValue: { models in
+            self.chatModelList = models
+        }.store(in: &cancellable)
     }
     
     private func setDelegate() {
@@ -95,13 +109,13 @@ final class ChatViewController: UIViewController {
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.getChatCellCount()
+        return chatModelList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChatCVC.className, for: indexPath)
                 as? ChatCVC else { return UICollectionViewCell() }
-        cell.initCell(model: viewModel.chatModel[indexPath.row])
+        cell.initCell(model: chatModelList[indexPath.row])
         return cell
     }
 }
