@@ -33,6 +33,11 @@
 		8EC7E62D291271710079F34E /* ChatCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC7E62C291271710079F34E /* ChatCVC.swift */; };
 		8EC7E62F291271840079F34E /* ChatCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC7E62E291271840079F34E /* ChatCollectionViewHeader.swift */; };
 		8EC7E631291272D30079F34E /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC7E630291272D30079F34E /* ChatModel.swift */; };
+		8EC7E6332912C2D90079F34E /* UploadPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC7E6322912C2D90079F34E /* UploadPhotoViewController.swift */; };
+		8EC7E6352912C2F20079F34E /* AddPhotoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC7E6342912C2F20079F34E /* AddPhotoCVC.swift */; };
+		8EC7E6372912C3210079F34E /* PhotoListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC7E6362912C3210079F34E /* PhotoListCVC.swift */; };
+		8EC7E6392912C3590079F34E /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC7E6382912C3590079F34E /* PhotoModel.swift */; };
+		8EC7E63B2912C3D20079F34E /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC7E63A2912C3D20079F34E /* PhotoViewModel.swift */; };
 		8EE90677291011D800FEDDD1 /* FriendsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE90676291011D800FEDDD1 /* FriendsModel.swift */; };
 		8EE90679291022F500FEDDD1 /* FriendsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE90678291022F500FEDDD1 /* FriendsTableViewHeader.swift */; };
 		8EF111D528F7FBF000A1D665 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF111D428F7FBF000A1D665 /* ImageLiterals.swift */; };
@@ -83,6 +88,11 @@
 		8EC7E62C291271710079F34E /* ChatCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCVC.swift; sourceTree = "<group>"; };
 		8EC7E62E291271840079F34E /* ChatCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewHeader.swift; sourceTree = "<group>"; };
 		8EC7E630291272D30079F34E /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		8EC7E6322912C2D90079F34E /* UploadPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoViewController.swift; sourceTree = "<group>"; };
+		8EC7E6342912C2F20079F34E /* AddPhotoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoCVC.swift; sourceTree = "<group>"; };
+		8EC7E6362912C3210079F34E /* PhotoListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCVC.swift; sourceTree = "<group>"; };
+		8EC7E6382912C3590079F34E /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		8EC7E63A2912C3D20079F34E /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		8EE90676291011D800FEDDD1 /* FriendsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsModel.swift; sourceTree = "<group>"; };
 		8EE90678291022F500FEDDD1 /* FriendsTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewHeader.swift; sourceTree = "<group>"; };
 		8EF111D428F7FBF000A1D665 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
@@ -349,6 +359,7 @@
 				8EF1120428F853FD00A1D665 /* UserModel.swift */,
 				8EE90676291011D800FEDDD1 /* FriendsModel.swift */,
 				8EC7E630291272D30079F34E /* ChatModel.swift */,
+				8EC7E6382912C3590079F34E /* PhotoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -532,6 +543,7 @@
 			isa = PBXGroup;
 			children = (
 				8E55C7CD29097CE600E4730E /* ChatViewController.swift */,
+				8EC7E6322912C2D90079F34E /* UploadPhotoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -540,6 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				8EC7E62A291271370079F34E /* ChatViewModel.swift */,
+				8EC7E63A2912C3D20079F34E /* PhotoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -549,6 +562,8 @@
 			children = (
 				8EC7E62C291271710079F34E /* ChatCVC.swift */,
 				8EC7E62E291271840079F34E /* ChatCollectionViewHeader.swift */,
+				8EC7E6342912C2F20079F34E /* AddPhotoCVC.swift */,
+				8EC7E6362912C3210079F34E /* PhotoListCVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -653,6 +668,7 @@
 				8E55C7D429097D0C00E4730E /* SettingViewController.swift in Sources */,
 				8E5BF4C328E9C77E00802AE9 /* SignInViewController.swift in Sources */,
 				8E774D3028F85D9F0094E45E /* SignUpViewModel.swift in Sources */,
+				8EC7E6352912C2F20079F34E /* AddPhotoCVC.swift in Sources */,
 				8EF111EC28F8043600A1D665 /* AuthTextFieldView.swift in Sources */,
 				8E55C7D029097CF400E4730E /* SearchViewController.swift in Sources */,
 				8EF111E328F8000100A1D665 /* UITextField+.swift in Sources */,
@@ -660,6 +676,7 @@
 				8E774D4528F86BDD0094E45E /* FriendsViewController.swift in Sources */,
 				8EF111DB28F7FECD00A1D665 /* addSubviews.swift in Sources */,
 				8EE90677291011D800FEDDD1 /* FriendsModel.swift in Sources */,
+				8EC7E6332912C2D90079F34E /* UploadPhotoViewController.swift in Sources */,
 				8EF111DF28F7FFB800A1D665 /* UIViewController+.swift in Sources */,
 				8E774D3228F85DAF0094E45E /* SignUpViewController.swift in Sources */,
 				8EF111D528F7FBF000A1D665 /* ImageLiterals.swift in Sources */,
@@ -675,16 +692,19 @@
 				8E55C7C829097B3000E4730E /* KakaoTabbarController.swift in Sources */,
 				8E774D4328F86BA10094E45E /* ProfileViewModel.swift in Sources */,
 				8EF111E928F8017400A1D665 /* ViewModelType.swift in Sources */,
+				8EC7E63B2912C3D20079F34E /* PhotoViewModel.swift in Sources */,
 				8EF111E628F800D100A1D665 /* SignInViewModel.swift in Sources */,
 				8EF111DD28F7FF0400A1D665 /* getClassName.swift in Sources */,
 				8EF111E128F7FFEF00A1D665 /* Adjusted+.swift in Sources */,
 				8E55C7CE29097CE600E4730E /* ChatViewController.swift in Sources */,
 				8E774D4728F86BE70094E45E /* FriendsViewModel.swift in Sources */,
 				8EF1120328F852B300A1D665 /* AuthCompleteViewModel.swift in Sources */,
+				8EC7E6372912C3210079F34E /* PhotoListCVC.swift in Sources */,
 				8EF5733828F8EB67008D4842 /* BottomButtonView.swift in Sources */,
 				8EC7E62B291271370079F34E /* ChatViewModel.swift in Sources */,
 				8E1B4502290FF2900013E10F /* FriendsTVC.swift in Sources */,
 				8EC7E62F291271840079F34E /* ChatCollectionViewHeader.swift in Sources */,
+				8EC7E6392912C3590079F34E /* PhotoModel.swift in Sources */,
 				8EC7E631291272D30079F34E /* ChatModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
