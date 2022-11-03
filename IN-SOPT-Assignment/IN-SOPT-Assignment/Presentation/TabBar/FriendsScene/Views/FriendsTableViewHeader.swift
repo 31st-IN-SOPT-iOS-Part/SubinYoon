@@ -9,7 +9,7 @@ import UIKit
 
 final class FriendsTableViewHeader: UITableViewHeaderFooterView {
     
-    // MARK: - UI Components
+    // MARK: - UI
     private let profileImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
     }
