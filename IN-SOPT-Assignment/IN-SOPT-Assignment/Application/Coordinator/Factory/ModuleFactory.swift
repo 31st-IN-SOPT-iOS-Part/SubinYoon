@@ -14,6 +14,7 @@ protocol ModuleFactoryProtocol {
     func makeFriendsViewController(userModel: UserModel) -> FriendsViewController
     func makeProfileViewController(userModel: FriendsModel) -> ProfileViewController
     func makeChatViewController() -> ChatViewController
+    func makeUploadPhotoViewController() -> UploadPhotoViewController
     func makeTabbarController() -> KakaoTabbarController
 }
 
@@ -63,6 +64,13 @@ final class ModuleFactory: ModuleFactoryProtocol {
         let chatViewController = ChatViewController()
         chatViewController.viewModel = viewModel
         return chatViewController
+    }
+    
+    func makeUploadPhotoViewController() -> UploadPhotoViewController {
+        let viewModel = PhotoViewModel()
+        let uploadPhotoViewController = UploadPhotoViewController()
+        uploadPhotoViewController.viewModel = viewModel
+        return uploadPhotoViewController
     }
     
     func makeTabbarController() -> KakaoTabbarController {
