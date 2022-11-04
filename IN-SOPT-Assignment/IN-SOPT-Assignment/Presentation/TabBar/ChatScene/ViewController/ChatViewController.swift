@@ -86,6 +86,7 @@ final class ChatViewController: UIViewController {
         output.chatModel.sink { _ in
         } receiveValue: { models in
             self.chatModelList = models
+            self.chatListCollectionView.reloadData()
         }.store(in: &cancellable)
     }
     

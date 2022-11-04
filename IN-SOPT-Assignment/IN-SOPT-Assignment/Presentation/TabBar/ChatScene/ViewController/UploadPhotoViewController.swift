@@ -113,6 +113,7 @@ final class UploadPhotoViewController: UIViewController {
         output.photoModel.sink { _ in
         } receiveValue: { models in
             self.photoModelList = models
+            self.photoListCollectionView.reloadData()
         }.store(in: &cancellable)
     }
     

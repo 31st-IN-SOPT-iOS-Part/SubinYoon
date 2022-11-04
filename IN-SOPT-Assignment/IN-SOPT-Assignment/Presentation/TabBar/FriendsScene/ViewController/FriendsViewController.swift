@@ -40,7 +40,6 @@ final class FriendsViewController: UIViewController, UIGestureRecognizerDelegate
         bind()
         setDelegate()
         registerCells()
-//        viewWillAppear.send()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +72,7 @@ final class FriendsViewController: UIViewController, UIGestureRecognizerDelegate
         output.friendsModel.sink { _ in
         } receiveValue: { models in
             self.friendsModelList = models
+            self.friendsListTableView.reloadData()
         }.store(in: &cancellable)
     }
     
@@ -119,6 +119,7 @@ extension FriendsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .normal, title: "삭제") { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
             self.friendsModelList.remove(at: indexPath.row)
+            self.viewModel.friendsModel.remove(at: indexPath.row)
             self.friendsListTableView.reloadData()
             success(true)
         }
