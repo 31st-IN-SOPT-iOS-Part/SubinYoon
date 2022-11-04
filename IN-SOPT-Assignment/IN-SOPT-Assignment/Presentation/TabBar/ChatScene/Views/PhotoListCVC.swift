@@ -23,7 +23,7 @@ final class PhotoListCVC: UICollectionViewCell {
             .asDriver()
     }()
     
-    private var cancellable: Set<AnyCancellable> = []
+    var cancellable: Set<AnyCancellable> = []
 
     // MARK: - UI
     private lazy var containerButton = UIButton(type: .system)
@@ -54,12 +54,18 @@ final class PhotoListCVC: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func prepareForReuse() {
+        self.cancellable = Set<AnyCancellable>()
+    }
 }
 
 // MARK: - Methods
 extension PhotoListCVC {
-    func initCell(model: PhotoModel) {
+    func initCell(model: PhotoModel, selectedPhotoIndex: Int?) {
         imageView.image = model.image
+        guard let selectedPhotoIndex = selectedPhotoIndex else { return }
+        countLabel.text = "\(selectedPhotoIndex)"
     }
     
     private func setUI() {

@@ -14,6 +14,7 @@ final class UploadPhotoViewController: UIViewController {
     var viewModel: PhotoViewModel!
     private var viewWillAppear = PassthroughSubject<Void, Error>()
     private let imageViewTapped = PassthroughSubject<(Int, Bool), Never>()
+    private var selectedPhotoIndex = [Int]()
     private var photoModelList = [PhotoModel]()
     private var cancellable: Set<AnyCancellable> = []
     
@@ -150,13 +151,20 @@ extension UploadPhotoViewController: UICollectionViewDelegate, UICollectionViewD
         } else {
             guard let listCell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoListCVC.className, for: indexPath)
                     as? PhotoListCVC else { return UICollectionViewCell() }
-            listCell.initCell(model: photoModelList[indexPath.item - 1])
+            listCell.initCell(model: photoModelList[indexPath.item - 1], selectedPhotoIndex: selectedPhotoIndex.firstIndex(of: indexPath.item - 1))
             listCell.index = indexPath.item - 1
-                        
+            
             listCell.imageViewTapped.sink { indexSelected in
                 self.imageViewTapped.send(indexSelected)
-            }.store(in: &cancellable)
-            
+                if indexSelected.1 {
+                    self.selectedPhotoIndex.append(indexSelected.0)
+                } else {
+                    self.selectedPhotoIndex.removeAll {
+                        $0 == indexSelected.0
+                    }
+                }
+                self.photoListCollectionView.reloadData()
+            }.store(in: &listCell.cancellable)
             return listCell
         }
     }
