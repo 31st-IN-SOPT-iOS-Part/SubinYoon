@@ -13,12 +13,13 @@ final class PhotoListCVC: UICollectionViewCell {
     // MARK: - Properties
     public var index: Int?
     
+    private var isSelectedCell = false
+    
     public lazy var imageViewTapped: Driver<(Int, Bool)> = {
         return containerButton.publisher(for: .touchUpInside)
-            .map {
-                self.containerButton.isSelected.toggle()
-                self.changePhotoState(index: self.index!, isSelected: $0.isSelected)
-                return (self.index!, $0.isSelected)
+            .map { _ in
+                self.isSelectedCell.toggle()
+                return (self.index!, self.isSelectedCell)
             }
             .asDriver()
     }()
@@ -64,8 +65,13 @@ final class PhotoListCVC: UICollectionViewCell {
 extension PhotoListCVC {
     func initCell(model: PhotoModel, selectedPhotoIndex: Int?) {
         imageView.image = model.image
-        guard let selectedPhotoIndex = selectedPhotoIndex else { return }
-        countLabel.text = "\(selectedPhotoIndex)"
+        guard let selectedPhotoIndex = selectedPhotoIndex else {
+            isSelectedCell = false
+            changePhotoState(selectedIndex: nil)
+            return
+        }
+        isSelectedCell = true
+        changePhotoState(selectedIndex: selectedPhotoIndex)
     }
     
     private func setUI() {
@@ -91,8 +97,10 @@ extension PhotoListCVC {
         }
     }
     
-    func changePhotoState(index: Int, isSelected: Bool) {
-        self.backgroundColor = isSelected ? .buttonYellow : .clear
-        self.countLabel.isHidden = !isSelected
+    func changePhotoState(selectedIndex: Int?) {
+        self.backgroundColor = isSelectedCell ? .buttonYellow : .clear
+        self.countLabel.isHidden = !isSelectedCell
+        guard let selectedIndex = selectedIndex else { return }
+        self.countLabel.text = "\(selectedIndex + 1)"
     }
 }

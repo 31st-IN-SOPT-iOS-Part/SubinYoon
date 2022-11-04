@@ -163,6 +163,7 @@ extension UploadPhotoViewController: UICollectionViewDelegate, UICollectionViewD
                         $0 == indexSelected.0
                     }
                 }
+                self.photoCountLabel.text = "\(self.selectedPhotoIndex.count)"
                 self.photoListCollectionView.reloadData()
             }.store(in: &listCell.cancellable)
             return listCell
