@@ -12,7 +12,6 @@ final class PhotoListCVC: UICollectionViewCell {
     
     // MARK: - Properties
     public var index: Int?
-    var selectedPhotoList: String = ""
     
     public lazy var imageViewTapped: Driver<(Int, Bool)> = {
         return containerButton.publisher(for: .touchUpInside)

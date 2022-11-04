@@ -26,7 +26,7 @@ final class ChatCVC: UICollectionViewCell {
     }
     
     private let timeLabel = UILabel().then {
-        $0.font = UIFont.systemFont(ofSize: 8, weight: .regular)
+        $0.font = UIFont.systemFont(ofSize: 9, weight: .regular)
         $0.textColor = .subtitleGray
     }
     

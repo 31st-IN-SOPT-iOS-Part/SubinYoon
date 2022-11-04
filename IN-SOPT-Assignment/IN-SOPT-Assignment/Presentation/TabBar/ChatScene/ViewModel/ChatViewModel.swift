@@ -5,6 +5,7 @@
 //  Created by devxsby on 2022/11/02.
 //
 
+import UIKit
 import Combine
 
 final class ChatViewModel: ViewModelType {
@@ -30,6 +31,7 @@ extension ChatViewModel {
         
         input.viewWillAppear.sink { _ in
         } receiveValue: { value in
+            self.sortLatestChat()
             output.chatModel.send(self.chatModel)
         }.store(in: &cancellable)
         
@@ -37,6 +39,14 @@ extension ChatViewModel {
     }
     
     func sortLatestChat() {
-        // TODO: - time 최신 순으로 포맷 변경해서 정렬하기
+        self.chatModel.sort {
+            stringToDate(dateStr: $0.time) > stringToDate(dateStr: $1.time)
+        }
+    }
+    
+    func stringToDate(dateStr: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatter.date(from: dateStr)!
     }
 }
