@@ -101,7 +101,7 @@ final class ChatViewController: UIViewController {
     
     @objc func plusButtonDidTap() {
         let uploadPhotoViewController = ModuleFactory.shared.makeUploadPhotoViewController()
-        uploadPhotoViewController.modalPresentationStyle = .fullScreen
+        uploadPhotoViewController.modalPresentationStyle = .overFullScreen
         present(uploadPhotoViewController, animated: true, completion: nil)
     }
 }

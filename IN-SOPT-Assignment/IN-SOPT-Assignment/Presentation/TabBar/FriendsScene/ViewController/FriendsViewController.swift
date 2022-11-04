@@ -40,6 +40,7 @@ final class FriendsViewController: UIViewController, UIGestureRecognizerDelegate
         bind()
         setDelegate()
         registerCells()
+//        viewWillAppear.send()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -158,7 +159,7 @@ extension FriendsViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let profileViewController = ModuleFactory.shared.makeProfileViewController(userModel: friendsModelList[indexPath.row])
-        profileViewController.modalPresentationStyle = .fullScreen
+        profileViewController.modalPresentationStyle = .overFullScreen
         present(profileViewController, animated: true, completion: nil)
     }
 }
