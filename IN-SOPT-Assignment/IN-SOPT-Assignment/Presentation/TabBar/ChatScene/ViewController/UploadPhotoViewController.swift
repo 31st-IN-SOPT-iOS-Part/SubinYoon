@@ -13,6 +13,7 @@ final class UploadPhotoViewController: UIViewController {
     // MARK: - Properties
     var viewModel: PhotoViewModel!
     private var viewWillAppear = PassthroughSubject<Void, Error>()
+    private let imageViewTapped = PassthroughSubject<(Int, Bool), Never>()
     private var photoModelList = [PhotoModel]()
     private var cancellable: Set<AnyCancellable> = []
     
@@ -105,7 +106,7 @@ final class UploadPhotoViewController: UIViewController {
     }
     
     private func bind() {
-        let input = PhotoViewModel.Input(viewWillAppear: viewWillAppear)
+        let input = PhotoViewModel.Input(viewWillAppear: viewWillAppear, imageViewTapped: self.imageViewTapped.asDriver())
         let output = viewModel.transform(from: input)
         
         output.photoModel.sink { _ in
@@ -150,15 +151,13 @@ extension UploadPhotoViewController: UICollectionViewDelegate, UICollectionViewD
             guard let listCell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoListCVC.className, for: indexPath)
                     as? PhotoListCVC else { return UICollectionViewCell() }
             listCell.initCell(model: photoModelList[indexPath.item - 1])
-            return listCell
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.item == 0 {
-            // 진짜 카메라 띄우기
-        } else {
+            listCell.index = indexPath.item - 1
+                        
+            listCell.imageViewTapped.sink { indexSelected in
+                self.imageViewTapped.send(indexSelected)
+            }.store(in: &cancellable)
             
+            return listCell
         }
     }
 }

@@ -6,10 +6,29 @@
 //
 
 import UIKit
+import Combine
 
 final class PhotoListCVC: UICollectionViewCell {
     
+    // MARK: - Properties
+    public var index: Int?
+    var selectedPhotoList: String = ""
+    
+    public lazy var imageViewTapped: Driver<(Int, Bool)> = {
+        return containerButton.publisher(for: .touchUpInside)
+            .map {
+                self.containerButton.isSelected.toggle()
+                self.changePhotoState(index: self.index!, isSelected: $0.isSelected)
+                return (self.index!, $0.isSelected)
+            }
+            .asDriver()
+    }()
+    
+    private var cancellable: Set<AnyCancellable> = []
+
     // MARK: - UI
+    private lazy var containerButton = UIButton(type: .system)
+    
     private let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.layer.masksToBounds = true
@@ -17,7 +36,10 @@ final class PhotoListCVC: UICollectionViewCell {
     
     private let countLabel = UILabel().then {
         $0.font = UIFont.systemFont(ofSize: 10, weight: .regular)
-        $0.backgroundColor = .clear
+        $0.text = "0"
+        $0.isHidden = true
+        $0.textAlignment = .center
+        $0.backgroundColor = .buttonYellow
         $0.textColor = .black
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 9
@@ -42,20 +64,30 @@ extension PhotoListCVC {
     }
     
     private func setUI() {
-        self.backgroundColor = .white
+        self.backgroundColor = .clear
     }
     
     private func setLayout() {
-        addSubviews(imageView, countLabel)
+        addSubview(containerButton)
+        containerButton.addSubviews(imageView, countLabel)
+        
+        containerButton.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
         imageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(2)
+            make.edges.equalToSuperview().inset(3)
         }
         
         countLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView).offset(2)
-            make.trailing.equalTo(imageView).inset(2)
+            make.top.equalTo(imageView).offset(3)
+            make.trailing.equalTo(imageView).inset(3)
             make.width.height.equalTo(18)
         }
+    }
+    
+    func changePhotoState(index: Int, isSelected: Bool) {
+        self.backgroundColor = isSelected ? .buttonYellow : .clear
+        self.countLabel.isHidden = !isSelected
     }
 }

@@ -18,8 +18,9 @@ final class PhotoViewModel: ViewModelType {
 
     struct Input {
         var viewWillAppear: PassthroughSubject<Void, Error>
+        let imageViewTapped: Driver<(Int, Bool)>
     }
-
+    
     struct Output {
         var photoModel = PassthroughSubject<[PhotoModel], Error>()
     }
@@ -34,6 +35,15 @@ extension PhotoViewModel {
             output.photoModel.send(self.photoModel)
         }.store(in: &cancellable)
         
+        input.imageViewTapped.sink { _ in
+        } receiveValue: { (index, selected) in
+            print("\(index), \(selected)")
+        }.store(in: &cancellable)
+
         return output
+    }
+    
+    func changePhotoStatus() {
+        
     }
 }

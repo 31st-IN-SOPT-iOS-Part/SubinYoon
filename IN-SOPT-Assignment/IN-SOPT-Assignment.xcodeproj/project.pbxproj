@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8E1B4502290FF2900013E10F /* FriendsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B4501290FF2900013E10F /* FriendsTVC.swift */; };
+		8E5203E12914B42B003A387F /* Publisher+UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5203E02914B42B003A387F /* Publisher+UIControl.swift */; };
+		8E5203E32914B568003A387F /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5203E22914B568003A387F /* Driver.swift */; };
 		8E55C7C829097B3000E4730E /* KakaoTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E55C7C729097B3000E4730E /* KakaoTabbarController.swift */; };
 		8E55C7CE29097CE600E4730E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E55C7CD29097CE600E4730E /* ChatViewController.swift */; };
 		8E55C7D029097CF400E4730E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E55C7CF29097CF400E4730E /* SearchViewController.swift */; };
@@ -58,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		8E1B4501290FF2900013E10F /* FriendsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTVC.swift; sourceTree = "<group>"; };
+		8E5203E02914B42B003A387F /* Publisher+UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+UIControl.swift"; sourceTree = "<group>"; };
+		8E5203E22914B568003A387F /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		8E55C7C729097B3000E4730E /* KakaoTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTabbarController.swift; sourceTree = "<group>"; };
 		8E55C7CD29097CE600E4730E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8E55C7CF29097CF400E4730E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 				8EF111E028F7FFEF00A1D665 /* Adjusted+.swift */,
 				8EF111DE28F7FFB800A1D665 /* UIViewController+.swift */,
 				8EF111E228F8000100A1D665 /* UITextField+.swift */,
+				8E5203E02914B42B003A387F /* Publisher+UIControl.swift */,
+				8E5203E22914B568003A387F /* Driver.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -681,6 +687,7 @@
 				8E774D3228F85DAF0094E45E /* SignUpViewController.swift in Sources */,
 				8EF111D528F7FBF000A1D665 /* ImageLiterals.swift in Sources */,
 				8E5BF4BF28E9C77E00802AE9 /* AppDelegate.swift in Sources */,
+				8E5203E32914B568003A387F /* Driver.swift in Sources */,
 				8EE90679291022F500FEDDD1 /* FriendsTableViewHeader.swift in Sources */,
 				8E55C7D229097D0200E4730E /* ShopViewController.swift in Sources */,
 				8E774D4128F86B750094E45E /* ProfileViewController.swift in Sources */,
@@ -689,6 +696,7 @@
 				8EF1120128F8528F00A1D665 /* AuthCompleteViewController.swift in Sources */,
 				8E5BF4C128E9C77E00802AE9 /* SceneDelegate.swift in Sources */,
 				8EF1120528F853FD00A1D665 /* UserModel.swift in Sources */,
+				8E5203E12914B42B003A387F /* Publisher+UIControl.swift in Sources */,
 				8E55C7C829097B3000E4730E /* KakaoTabbarController.swift in Sources */,
 				8E774D4328F86BA10094E45E /* ProfileViewModel.swift in Sources */,
 				8EF111E928F8017400A1D665 /* ViewModelType.swift in Sources */,
