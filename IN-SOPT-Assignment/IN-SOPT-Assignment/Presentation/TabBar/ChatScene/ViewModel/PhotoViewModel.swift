@@ -39,11 +39,7 @@ extension PhotoViewModel {
         } receiveValue: { (index, selected) in
             print("\(index), \(selected)")
         }.store(in: &cancellable)
-
-        return output
-    }
-    
-    func changePhotoStatus() {
         
+        return output
     }
 }
