@@ -12,10 +12,9 @@ final class UploadPhotoViewController: UIViewController {
     
     // MARK: - Properties
     var viewModel: PhotoViewModel!
+    private var photoModelList = [PhotoModel]()
     private var viewWillAppear = PassthroughSubject<Void, Error>()
     private let imageViewTapped = PassthroughSubject<(Int, Bool), Never>()
-    private var selectedPhotoIndex = [Int]()
-    private var photoModelList = [PhotoModel]()
     private var cancellable: Set<AnyCancellable> = []
     
     // MARK: - UI
@@ -152,19 +151,14 @@ extension UploadPhotoViewController: UICollectionViewDelegate, UICollectionViewD
         } else {
             guard let listCell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoListCVC.className, for: indexPath)
                     as? PhotoListCVC else { return UICollectionViewCell() }
-            listCell.initCell(model: photoModelList[indexPath.item - 1], selectedPhotoIndex: selectedPhotoIndex.firstIndex(of: indexPath.item - 1))
+            listCell.initCell(model: photoModelList[indexPath.item - 1], selectedPhotoIndex: viewModel.getPositionOfSelectedPhotoIndex(indexPath: indexPath.item - 1))
             listCell.index = indexPath.item - 1
             
-            listCell.imageViewTapped.sink { indexSelected in
+            listCell.imageViewTapped.sink { [weak self] indexSelected in
+                guard let self = self else { return }
                 self.imageViewTapped.send(indexSelected)
-                if indexSelected.1 {
-                    self.selectedPhotoIndex.append(indexSelected.0)
-                } else {
-                    self.selectedPhotoIndex.removeAll {
-                        $0 == indexSelected.0
-                    }
-                }
-                self.photoCountLabel.text = "\(self.selectedPhotoIndex.count)"
+                self.viewModel.updateSelectedPhotoIndex(indexSelected: indexSelected)
+                self.photoCountLabel.text = self.viewModel.getSelectedPhotoCount()
                 self.photoListCollectionView.reloadData()
             }.store(in: &listCell.cancellable)
             return listCell
