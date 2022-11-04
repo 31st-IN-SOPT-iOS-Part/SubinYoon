@@ -36,8 +36,6 @@ final class PhotoListCVC: UICollectionViewCell {
     
     private let countLabel = UILabel().then {
         $0.font = UIFont.systemFont(ofSize: 10, weight: .regular)
-        $0.text = "0"
-        $0.isHidden = true
         $0.textAlignment = .center
         $0.backgroundColor = .buttonYellow
         $0.textColor = .black
