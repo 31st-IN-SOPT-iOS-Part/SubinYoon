@@ -73,10 +73,10 @@ final class ChatViewController: UIViewController {
     
     private func navigationBarUI() {
         let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        spacer.width = 10
+        spacer.width = 8
         
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: naviChatButton), spacer, UIBarButtonItem(customView: naviOpenChatButton)]
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: naviPlusButton), spacer, UIBarButtonItem(customView: naviSettingButton)]
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: naviSettingButton), spacer, UIBarButtonItem(customView: naviPlusButton)]
     }
     
     private func bind() {

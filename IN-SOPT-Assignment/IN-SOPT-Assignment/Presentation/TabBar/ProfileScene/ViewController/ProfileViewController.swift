@@ -63,7 +63,7 @@ final class ProfileViewController: UIViewController {
         
         userImageView.snp.makeConstraints { make in
             make.centerX.equalTo(view.safeAreaLayoutGuide)
-            make.centerY.equalTo(view.safeAreaLayoutGuide).multipliedBy(1.4)
+            make.centerY.equalTo(view.safeAreaLayoutGuide).multipliedBy(1.3)
             make.width.height.equalTo(96)
         }
         
