@@ -19,7 +19,7 @@ final class AuthTextFieldView: UIView {
         $0.clearButtonMode = .whileEditing
     }
     
-    private let verticalLine = UIView().then {
+    private let horizontalLine = UIView().then {
         $0.backgroundColor = .lineDarkGray
     }
     
@@ -38,13 +38,13 @@ final class AuthTextFieldView: UIView {
     
     // MARK: - Functions
     private func configureUI() {
-        addSubviews(textField, verticalLine)
+        addSubviews(textField, horizontalLine)
         
         textField.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
         }
         
-        verticalLine.snp.makeConstraints { make in
+        horizontalLine.snp.makeConstraints { make in
             make.top.equalTo(textField.snp.bottom).offset(5)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(1)

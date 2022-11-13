@@ -15,8 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let signInViewController = ModuleFactory.shared.makeSignInViewController()
-        window.rootViewController = UINavigationController(rootViewController: signInViewController)
+        let tabbarController = ModuleFactory.shared.makeTabbarController()
+        let nav = UINavigationController(rootViewController: tabbarController)
+        nav.navigationBar.isHidden = true
+        window.rootViewController = nav
         window.makeKeyAndVisible()
         self.window = window
     }

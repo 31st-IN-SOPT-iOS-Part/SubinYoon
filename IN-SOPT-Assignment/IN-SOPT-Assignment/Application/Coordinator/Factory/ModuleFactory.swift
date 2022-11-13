@@ -12,7 +12,10 @@ protocol ModuleFactoryProtocol {
     func makeSignUpViewController() -> SignUpViewController
     func makeAuthCompleteViewController(email: String, password: String) -> AuthCompleteViewController
     func makeFriendsViewController(userModel: UserModel) -> FriendsViewController
-    func makeProfileViewController(userModel: UserModel) -> ProfileViewController
+    func makeProfileViewController(userModel: FriendsModel) -> ProfileViewController
+    func makeChatViewController() -> ChatViewController
+    func makeUploadPhotoViewController() -> UploadPhotoViewController
+    func makeTabbarController() -> KakaoTabbarController
 }
 
 final class ModuleFactory: ModuleFactoryProtocol {
@@ -35,7 +38,7 @@ final class ModuleFactory: ModuleFactoryProtocol {
     }
     
     func makeAuthCompleteViewController(email: String, password: String) -> AuthCompleteViewController {
-        let userModel = UserModel(email: email, password: password)
+        let userModel = UserModel(userName: email, caption: password)
         let viewModel = AuthCompleteViewModel(userModel: userModel)
         let authCompleteViewController = AuthCompleteViewController()
         authCompleteViewController.viewModel = viewModel
@@ -43,16 +46,35 @@ final class ModuleFactory: ModuleFactoryProtocol {
     }
     
     func makeFriendsViewController(userModel: UserModel) -> FriendsViewController {
-        let viewModel = FriendsViewModel(userModel: userModel)
+        let viewModel = FriendsViewModel()
         let friendsViewController = FriendsViewController()
         friendsViewController.viewModel = viewModel
         return friendsViewController
     }
     
-    func makeProfileViewController(userModel: UserModel) -> ProfileViewController {
+    func makeProfileViewController(userModel: FriendsModel) -> ProfileViewController {
         let viewModel = ProfileViewModel(userModel: userModel)
         let profileViewController = ProfileViewController()
         profileViewController.viewModel = viewModel
         return profileViewController
+    }
+    
+    func makeChatViewController() -> ChatViewController {
+        let viewModel = ChatViewModel()
+        let chatViewController = ChatViewController()
+        chatViewController.viewModel = viewModel
+        return chatViewController
+    }
+    
+    func makeUploadPhotoViewController() -> UploadPhotoViewController {
+        let viewModel = PhotoViewModel()
+        let uploadPhotoViewController = UploadPhotoViewController()
+        uploadPhotoViewController.viewModel = viewModel
+        return uploadPhotoViewController
+    }
+    
+    func makeTabbarController() -> KakaoTabbarController {
+        let tabbarController = KakaoTabbarController()
+        return tabbarController
     }
 }

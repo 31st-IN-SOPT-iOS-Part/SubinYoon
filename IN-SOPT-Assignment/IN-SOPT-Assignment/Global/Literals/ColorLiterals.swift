@@ -39,6 +39,10 @@ extension UIColor {
     static var lineLightGray: UIColor {
         return UIColor(hex: "#9FA7AD")
     }
+    
+    static var subtitleGray: UIColor {
+        return UIColor(hex: "#A6A6A6")
+    }
 }
 
 extension UIColor {
